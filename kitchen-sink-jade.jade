@@ -1,0 +1,4296 @@
+!!! 5
+html(lang="en")
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width')
+		title Foundation 4
+		link(rel='stylesheet', href='stylesheets/app.css', type='text/css')
+		script(src="javascripts/vendor/custom.modernizr.js")
+	body
+		.full-width(style='height: 20em; overflow: hidden; margin-bottom: 2em;')
+			img(src='http://foundation.zurb.com/files/mobile-first-2880x1800.png', alt='mobile-first-2880x1800', width='2880', height='1800', style='min-height: 200%; margin-top: -10em;')
+		.row
+			.large-12.columns
+				h1.text-center Welcome to Foundation
+				h6.text-center This is version 4.3.1
+				br
+				hr
+				br
+		.row
+			.large-8.columns
+				h2 The Grid
+				// <Grid>Example</Grid>
+				.row
+					.large-12.columns
+						.panel
+							p This is a twelve column section in a row. Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.
+				.row
+					.large-6.columns
+						.panel
+							p Six columns
+					.large-6.columns
+						.panel
+							p Six columns
+				.row
+					.large-4.columns
+						.panel
+							p Four columns
+					.large-4.columns
+						.panel
+							p Four columns
+					.large-4.columns
+						.panel
+							p Four columns
+				h2 Buttons
+				.row
+					.large-6.columns
+						p
+							a.small.button(href='#') Small Button
+						p
+							a.button(href='#') Medium Button
+						p
+							a.large.button(href='#') Large Button
+					.large-6.columns
+						p
+							a.small.alert.button(href='#') Small Alert Button
+						p
+							a.success.button(href='#') Medium Success Button
+						p
+							a.large.secondary.button(href='#') Large Secondary Button
+			.large-4.columns
+				h2 Getting Started
+				p We're stoked you want to try Foundation! To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.
+				h2 Other Resources
+				p Once you've exhausted the fun in this document, you should check out:
+				ul.disc
+					li
+						a(href='http://foundation.zurb.com/docs') Foundation Documentation
+						br Everything you need to know about using the framework.
+					li
+						a(href='http://github.com/zurb/foundation') Foundation on Github
+						br Latest code, issue reports, feature requests and more.
+					li
+						a(href='http://twitter.com/foundationzurb') @foundationzurb
+						br Ping us on Twitter if you have questions. If you build something with this we'd love to see it (and send you a totally boss sticker).
+		br
+		hr
+		br
+		
+		
+		// KITCHEN SINK START
+		.row
+			.large-12.columns
+				h1.text-center Kitchen Sink
+				h4.subheader.text-center This page included every single Foundation element so that we can make sure things work together smoothly.
+			br
+			hr
+			br
+		// THE GRID
+		.row
+			.large-12.columns
+				h2 The Grid:
+					span.subheader Using our Predefined HTML Classes
+				p These are examples of different ways to use the Foundation Grid. Foundation uses  
+					code box-sizing: border-box
+					so that borders and padding do not affect the overall width of the columns, making the math dead-simple. Since Foundation is mobile-first, we'll stack content by default. You do have access to an entirely separate small grid to use up to the 768px breakpoint. This means you can create some pretty complex layouts and even drop columns if you want.
+				.row
+					.small-2.large-4.columns
+						.panel
+							span.show-for-small 2
+							span.hide-for-small 4
+					.small-4.large-4.columns
+						.panel 4
+					.small-6.large-4.columns
+						.panel
+							span.show-for-small 6
+							span.hide-for-small 4
+				.row
+					.large-3.columns
+						.panel
+							span.show-for-small full
+							span.hide-for-small 3
+					.large-6.columns
+						.panel
+							span.show-for-small full
+							span.hide-for-small 6
+					.large-3.columns
+						.panel
+							span.show-for-small full
+							span.hide-for-small 3
+				.row
+					.small-6.large-2.columns
+						.panel
+							span.show-for-small 6
+							span.hide-for-small 2
+					.small-6.large-8.columns
+						.panel
+							span.show-for-small 6
+							span.hide-for-small 8
+					.small-12.large-2.columns
+						.panel
+							span.show-for-small full
+							span.hide-for-small 2
+				.row
+					.small-3.columns
+						.panel 3
+					.small-9.columns
+						.panel 9
+				.row
+					.large-4.columns
+						.panel
+							span.show-for-small full
+							span.hide-for-small 4
+					.large-8.columns
+						.panel
+							span.show-for-small full
+							span.hide-for-small 8
+				.row
+					.small-6.large-5.columns
+						.panel
+							span.show-for-small 6
+							span.hide-for-small 5
+					.small-6.large-7.columns
+						.panel
+							span.show-for-small 6
+							span.hide-for-small 7
+				.row
+					.large-6.columns
+						.panel
+							span.show-for-small full
+							span.hide-for-small 6
+					.large-6.columns
+						.panel
+							span.show-for-small full
+							span.hide-for-small 6
+				br
+				hr
+				br
+			
+				// INFINITELY NEST YOUR GRID
+				h2 Infinitely Nest Your Grid
+				p The grid allows for nesting down as far as you'd like, though at a certain point it will get absurd. You can use this nesting to create quite complex layouts, as well as some other tricks like form layouts or visual elements.
+				.row
+					.small-8.columns
+						.panel 8
+							.row
+								.small-8.columns
+									.panel 8 Nested
+										.row
+											.small-8.columns
+												.panel 8 Nested Again
+											.small-4.columns
+												.panel 4
+								.small-4.columns
+									.panel 4
+					.small-4.columns
+						.panel 4
+				br
+				hr
+				br
+				
+				// OFFSETS
+				h2 Offsets
+				p Offsets allow you to create additional space between columns in a row. Like the rest of the grid, they're nestable. You can use classes like  
+					code large-offset-1
+					and 
+					code small-offset-3
+					to manipulate your column positions in different ways. You can offset up to 11 since you wouldn't ever offset a full-width column.
+				.row
+					.large-1.columns
+						.panel 1
+					.large-11.columns
+						.panel 11
+				.row
+					.large-1.columns
+						.panel 1
+					.large-10.large-offset-1.columns
+						.panel 10, offset 1
+				.row
+					.large-1.columns
+						.panel 1
+					.large-9.large-offset-2.columns
+						.panel 9, offset 2
+				.row
+					.large-1.columns
+						.panel 1
+					.large-8.large-offset-3.columns
+						.panel 8, offset 3
+				br
+				hr
+				br
+				
+				// CENTERED COLUMNS
+				h2 Centered Columns
+				p Centered columns are placed in the middle of the row. This does not center their content, but centers the grid element, itself. This is accomplished by adding a class of 
+					code large-centered
+					or 
+					code small-centered
+					depending on which breakpoint you want the columns to center on. Small versions will carry through all breakpoints if not overridden by a large version. You can center any number of columns you have.
+				.row
+					.small-3.small-centered.columns
+						.panel 3 centered
+				.row
+					.small-6.small-centered.columns
+						.panel 6 centered
+				.row
+					.small-9.small-centered.columns
+						.panel 9 centered
+				.row
+					.small-11.small-centered.columns
+						.panel 11 centered
+				br
+				hr
+				br
+				
+				// SOURCE ORDERING
+				h2 Source Ordering
+				p Using these source ordering classes, you can shift columns around between our breakpoints. This means you can have a sub-nav on the left on large displays, but go below on small ones. 
+					code push-#
+					is the syntax you'll use.
+				.row
+					.small-2.push-10.columns
+						.panel 2
+					.small-10.pull-2.columns
+						.panel 10, last
+				.row
+					.small-3.push-9.columns
+						.panel 3
+					.small-9.pull-3.columns
+						.panel 9, last
+				.row
+					.small-4.push-8.columns
+						.panel 4
+					.small-8.pull-4.columns
+						.panel 8, last
+				.row
+					.small-5.push-7.columns
+						.panel 5
+					.small-7.pull-5.columns
+						.panel 5, last
+				.row
+					.small-6.push-6.columns
+						.panel 6
+					.small-6.pull-6.columns
+						.panel 6, last
+				br
+				hr
+				br
+				
+				// SMALL GRID
+				h2 Small Grid
+				p As you've probably noticed in the examples above, you have access to a small and large grid. If you know that your grid structure will be the same for small devices as it will be on large devices, just use the small grid. You can override your small grid classes by adding large grid classes to it. To use the mixin, you'll need to have the 
+					a(href='../sass.html') extension installed 
+					or grab 
+					a(target='_blank', href='https://github.com/zurb/foundation/tree/master/scss/foundation/components') _foundation-global.scss , 
+					a(href='https://github.com/zurb/foundation/blob/master/scss/foundation/components/_global.scss') _global.scss and 
+					a(target='_blank', href='https://github.com/zurb/foundation/tree/master/scss/foundation/components') _grid.scss 
+					from Github and throw them into a Foundation folder in your project directory.
+				.row
+					.small-2.columns
+						.panel 2
+					.small-10.columns
+						.panel 10, last
+				.row
+					.small-3.columns
+						.panel 3
+					.small-9.columns
+						.panel 9, last
+						
+				br
+				hr
+				br
+				
+				// MEDIUM GRID
+				h2 Medium Grid
+				.row
+					.small-1.medium-6.large-12.columns
+						.panel
+							span.show-for-small Small
+							span.show-for-medium Medium
+							span.show-for-large large
+		br
+		hr
+		br
+			
+		// FOUNDATION COLOR PALETTE
+		.row
+			.large-12.columns
+				h2 Foundation Color Palette
+				h4.button.large.expand.primary
+					p
+						br
+					p
+						br
+					p Primary Color
+					p
+						br
+					p
+						br
+			.large-4.columns
+				h4.button.expand.large.secondary
+					p
+						br
+					p
+						br
+					p Secondary Color
+					p
+						br
+					p
+						br
+			.large-4.columns
+				h4.button.large.expand.success
+					p
+						br
+					p
+						br
+					p Success Color
+					p
+						br
+					p
+						br
+			.large-4.columns
+				h4.button.large.expand.alert
+					p
+						br
+					p
+						br
+					p Alert Color
+					p
+						br
+					p
+						br
+			
+		.row
+			.large-12.columns
+				// FLAT COLOR PALETTE
+				h2 Flat Color Palette
+				p Courtesy of 
+					a(href='http://websymphony.net/almost-flat-ui/', target='_blank') Almost Flat UI
+			.large-6.columns
+				h4.button.expand.large.primary-flat
+					p
+						br
+					p Primary
+						br
+						small(style='color: white;') Default Foundation color
+					p
+						br
+			.large-6.columns
+				h4.button.primary-flat-dark.large.expand
+					p
+						br
+					p Primary Dark
+						br
+						small(style='color: white;') $belize-hole: #2980B9;
+					p
+						br
+			.large-6.columns
+				h4.button.secondary-flat.large.expand
+					p
+						br
+					p(style='color: black;') Secondary
+						br
+						small(style='color: black;') $clouds:#ECF0F1;
+					p
+						br
+			.large-6.columns
+				h4.button.secondary-flat-dark.large.expand
+					p
+						br
+					p Secondary Dark
+						br
+						small(style='color: white;') $silver: #BDC3C7;
+					p
+						br
+			.large-6.columns
+				h4.button.secondary-flat-darker.large.expand
+					p
+						br
+					p Secondary Darker
+						br
+						small(style='color: white;') $concrete: #95A5A6;
+					p
+						br
+			.large-6.columns
+				h4.button.secondary-flat-darkest.large.expand
+					p
+						br
+					p Secondary Darkest
+						br
+						small(style='color: white;') $asbestos: #7F8C8D;
+					p
+						br
+			.large-6.columns
+				h4.button.large.expand.highlight-flat
+					p
+						br
+					p Highlight
+						br
+						small(style='color: white;') $amethyst: #9859b6;
+					p
+						br
+			.large-6.columns
+				h4.button.large.expand.highlight-flat-dark
+					p
+						br
+					p Highlight Dark
+						br
+						small(style='color: white;') $wisteria: #8E44AD;
+					p
+						br
+			.large-6.columns
+				h4.button.large.expand.info-flat
+					p
+						br
+					p Info
+						br
+						small(style='color: white;') $sun-flower: #F1C40F;
+					p
+						br
+			.large-6.columns
+				h4.button.large.expand.info-flat-dark
+					p
+						br
+					p Info Dark
+						br
+						small(style='color: white;') $orange: #F39C12;
+					p
+						br
+			.large-6.columns
+				h4.button.success-flat.large.expand
+					p
+						br
+					p Success
+						br
+						small(style='color: white;') $emerland: #2ECC71;
+					p
+						br
+			.large-6.columns
+				h4.button.large.expand.success-flat-dark
+					p
+						br
+					p Success Dark
+						br
+						small(style='color: white;') $turquoise: #1ABC9C;
+					p
+						br
+			.large-6.columns
+				h4.button.large.expand.success-flat-darker
+					p
+						br
+					p Success Darker
+						br
+						small(style='color: white;') $nephritis: #27AE60;
+					p
+						br
+			.large-6.columns
+				h4.button.large.expand.success-flat-darkest
+					p
+						br
+					p Success Darkest
+						br
+						small(style='color: white;') $green-sea: #16A085;
+					p
+						br
+			.large-6.columns
+				h4.button.large.expand.warning-flat
+					p
+						br
+					p Warning
+						br
+						small(style='color: white;') $carrot: #E67E22;
+					p
+						br
+			.large-6.columns
+				h4.button.large.expand.warning-flat-dark
+					p
+						br
+					p Warning Dark
+						br
+						small(style='color: white;') $pumpkin: #D35400;
+					p
+						br
+			.large-6.columns
+				h4.button.large.expand.alert-flat
+					p
+						br
+					p Alert
+						br
+						small(style='color: white;') $alizarin: #E74C3C;
+					p
+						br
+			.large-6.columns
+				h4.button.large.expand.alert-flat-dark
+					p
+						br
+					p Alert Dark
+						br
+						small(style='color: white;') $pomegranate: #C0392B;
+					p
+						br
+			.large-6.columns
+				h4.button.large.expand.inverse-flat
+					p
+						br
+					p Inverse
+						br
+						small(style='color: white;') $wet-asphalt: #34495E;
+					p
+						br
+			.large-6.columns
+				h4.button.large.expand.inverse-flat-dark
+					p
+						br
+					p Inverse Dark
+						br
+						small(style='color: white;') $midnight-blue: #2C3E50;
+					p
+						br
+			.large-6.columns
+				h4.button.large.expand.inverse-flat-darker
+					p
+						br
+					p Inverse Darker
+						br
+						small(style='color: white;') $black-top: #2C3E50;
+					p
+						br
+		br
+		hr
+		br
+				
+		// ALERT BOXES
+		.row
+			.large-12.columns
+				h2 Alert Boxes
+				.alert-box.radius(data-alert='data-alert') This is a standard alert (div.alert-box).
+					a.close(href="") ×
+				.alert-box.success(data-alert='data-alert') This is a success alert (div.alert-box.success).
+					a.close(href="") ×
+				.alert-box.alert.round(data-alert='data-alert') This is an alert (div.alert-box.alert.round).
+					a.close(href="") ×
+				.alert-box.secondary(data-alert='data-alert') This is a secondary alert (div.alert-box.secondary).
+					a.close(href="") ×
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// BLOCK GRID
+				h2 Block Grid
+				ul.small-block-grid-2.large-block-grid-4
+					li
+						img.th(src="img/demos/demo1.jpg", alt="")
+					li
+						img.th(src="img/demos/demo2.jpg", alt="")
+					li
+						img.th(src="img/demos/demo3.jpg", alt="")
+					li
+						img.th(src="img/demos/demo4.jpg", alt="")
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// BREADCRUMBS
+				h2 Breadcrumbs
+				ul.breadcrumbs
+					li
+						a(href='#') Home
+					li
+						a(href='#') Features
+					li.unavailable
+						a(href='#') Gene Splicing
+					li.current
+						a(href='#') Cloning
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// BUTTONS
+				h2 Buttons
+				.row
+					.small-6.large-6.columns
+						a.tiny.button(href='#') .tiny.button
+						br
+						a.small.button(href='#') .small.button
+						br
+						a.button(href='#') .button
+						br
+					.small-6.large-6.columns
+						a.tiny.button.secondary(href='#') .tiny.secondary
+						br
+						a.small.button.success.radius(href='#') .small.success.radius
+						br
+						a.button.round.alert.disabled(href='#') .round.alert.disabled
+						br
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// BUTTON SIZES
+				h2 Button Sizes
+				.row
+					.large-12.columns
+						table.large-12.columns
+							thead
+								tr
+									th Button
+									th class=""
+									th Description
+							tbody
+								tr
+									td
+										button.button.tiny(type='button') Tiny
+									td
+										code button tiny
+									td Tiny Button
+								tr
+									td
+										button.button.small(type='button') Small
+									td
+										code button small
+									td Small Button
+								tr
+									td
+										button.button(type='button') Regular
+									td
+										code button
+									td Regular Button
+								tr
+									td
+										button.button.large(type='button') Large
+									td
+										code button large
+									td Large Button
+								tr
+									td
+										button.button.large.expand(type='button') Large Expand
+									td
+										code button large expand
+									td Large Expand Button
+		br
+		hr
+		br
+		// BUTTON TYPES
+		.row
+			.large-12.columns
+				h2 Button Types
+				table.large-12.columns
+					thead
+						tr
+							th Button
+							th class=""
+							th Description
+					tbody
+						tr
+							td
+								button.button(type='button') Default
+							td
+								code button
+							td Default Button
+						tr
+							td
+								button.button.radius(type='button') Radius
+							td
+								code button radius
+							td Radius Button
+						tr
+							td
+								button.button.round(type='button') Round
+							td
+								code button round
+							td Round Button
+		br
+		hr
+		br
+		
+		// BUTTON STATES
+		.row
+			.large-12.columns
+				h2 Button States
+				table.large-12.columns
+					thead
+						tr
+							th Button
+							th class=""
+							th Description
+					tbody
+						tr
+							td
+								button.button.secondary(type='button') Secondary
+							td
+								code button secondary
+							td Secondary Button
+						tr
+							td
+								button.button.success(type='button') Success
+							td
+								code button success
+							td Success Button
+						tr
+							td
+								button.button.alert(type='button') Alert
+							td
+								code button alert
+							td Alert Button
+						tr
+							td
+								button.button.disabled(type='button') Disabled
+							td
+								code button disabled
+							td Disabled Button
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// BUTTON GROUPS
+				h2 Button Groups
+				ul.button-group
+					li
+						a.small.button(href='#') Button 1
+					li
+						a.small.button(href='#') Button 2
+					li
+						a.small.button(href='#') Button 3
+				ul.button-group.radius
+					li
+						a.button.secondary(href='#') Button 1
+					li
+						a.button.secondary(href='#') Button 2
+					li
+						a.button.secondary(href='#') Button 3
+					li
+						a.button.secondary(href='#') Button 4
+				ul.button-group.round.even-3
+					li
+						a.button.alert(href='#') Button 1
+					li
+						a.button.alert(href='#') Button 2
+					li
+						a.button.alert(href='#') Button 3
+				ul.button-group.round.even-3
+					li
+						input.button.success(type='submit', value='Button 1')
+					li
+						input.button.success(type='submit', value='Button 2')
+					li
+						input.button.success(type='submit', value='Button 3')
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// DROPDOWN BUTTONS
+				h2 Dropdown Buttons
+				a.tiny.button.dropdown(href='#', data-dropdown='drop1') Dropdown Button
+				br
+				a.small.secondary.radius.button.dropdown(href='#', data-dropdown='drop2') Dropdown Button
+				br
+				a.button.alert.round.dropdown(href='#', data-dropdown='drop3') Dropdown Button
+				br
+				a.large.success.button.dropdown(href='#', data-dropdown='drop4') Dropdown Button
+				br
+				a.large.button.dropdown.expand(href='#', data-dropdown='drop5') Dropdown Button
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// SPLIT BUTTONS
+				h2 Split Buttons
+				a.tiny.button.split(href='#') Split Button
+					span(data-dropdown='drop1')
+				br
+				a.small.secondary.radius.button.split(href='#') Split Button
+					span(data-dropdown='drop2')
+				br
+				a.button.alert.round.split(href='#') Split Button
+					span(data-dropdown='drop3')
+				br
+				a.large.success.button.split(href='#') Split Button
+					span(data-dropdown='drop4')
+
+		br
+		hr
+		br
+		// ALMOST FLAT BUTTONS
+		.row
+			.large-12.columns
+				h2 Almost Flat Buttons
+				p Courtesy of 
+					a(href='http://websymphony.net/almost-flat-ui/', target='_blank') Almost Flat UI
+				p
+					mark Note the addition of "flat" to the class names. This is different from the 'Almost Flat UI' settings.
+				table.large-12.columns
+					thead
+						tr
+							th Button
+							th class=""
+							th Description
+					tbody
+						tr
+							td
+								button.button.primary-flat.expand(type='button') Primary
+							td
+								code button primary-flat
+							td Provides extra visual weight and identifies the primary action in a set of buttons
+						tr
+							td
+								button.button.primary-flat-dark.expand(type='button') Primary Dark
+							td
+								code button primary-flat-dark
+							td Provides extra visual weight and identifies the primary action in a set of buttons
+						tr
+							td
+								button.button.secondary-flat.expand(type='button', style='color: black;') Secondary
+							td
+								code button secondary-flat
+							td Standard gray button with gradient
+						tr
+							td
+								button.button.secondary-flat-dark.expand(type='button', style='color: black;') Secondary Dark
+							td
+								code button secondary-flat-dark
+							td Standard gray button with gradient
+						tr
+							td
+								button.button.secondary-flat-darker.expand(type='button') Secondary Darker
+							td
+								code button secondary-flat-darker
+							td Standard gray button with gradient
+						tr
+							td
+								button.button.secondary-flat-darkest.expand(type='button') Secondary Darkest
+							td
+								code button secondary-flat-darkest
+							td Standard gray button with gradient
+						tr
+							td
+								button.button.highlight-flat.expand(type='button') Highlight
+							td
+								code button highlight-flat
+							td To highlight some extraordinary action
+						tr
+							td
+								button.button.highlight-flat-dark.expand(type='button') Highlight Dark
+							td
+								code button highlight-flat-dark
+							td To highlight some extraordinary action
+						tr
+							td
+								button.button.info-flat.expand(type='button') Info
+							td
+								code button info-flat
+							td Used as an alternative to the default styles
+						tr
+							td
+								button.button.info-flat-dark.expand(type='button') Info Dark
+							td
+								code button info-flat-dark
+							td Used as an alternative to the default styles
+						tr
+							td
+								button.button.success-flat.expand(type='button') Success
+							td
+								code button success-flat
+							td Indicates a successful or positive action
+						tr
+							td
+								button.button.success-flat-dark.expand(type='button') Success Dark
+							td
+								code button success-flat-dark
+							td Indicates a successful or positive action
+						tr
+							td
+								button.button.success-flat-darker.expand(type='button') Success Darker
+							td
+								code button success-flat-darker
+							td Indicates a successful or positive action
+						tr
+							td
+								button.button.success-flat-darkest.expand(type='button') Success Darkest
+							td
+								code button success-flat-darkest
+							td Indicates a successful or positive action
+						tr
+							td
+								button.button.warning-flat.expand(type='button') Warning
+							td
+								code button warning-flat
+							td Indicates caution should be taken with this action
+						tr
+							td
+								button.button.warning-flat-dark.expand(type='button') Warning Dark
+							td
+								code button warning-flat-dark
+							td Indicates caution should be taken with this action
+						tr
+							td
+								button.button.alert-flat.expand(type='button') Alert
+							td
+								code button alert-flat
+							td Indicates a dangerous or potentially negative action
+						tr
+							td
+								button.button.alert-flat-dark.expand(type='button') Alert Dark
+							td
+								code button alert-flat-dark
+							td Indicates a dangerous or potentially negative action
+						tr
+							td
+								button.button.inverse-flat.expand(type='button') Inverse
+							td
+								code button inverse-flat
+							td Alternate dark gray button, not tied to a semantic action or use
+						tr
+							td
+								button.button.inverse-flat-dark.expand(type='button') Inverse Dark
+							td
+								code button inverse-flat-dark
+							td Alternate dark gray button, not tied to a semantic action or use
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// CLEARING
+				h2 Clearing
+				ul.clearing-thumbs(data-clearing)
+					li
+						a(href="img/demos/demo1.jpg")
+							img(data-caption='Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum.', src="img/demos/demo1-th.jpg", alt="")
+					li
+						a(href="img/demos/demo2.jpg")
+							img(src="img/demos/demo2-th.jpg", alt="")
+					li
+						a(href="img/demos/demo3.jpg")
+							img(data-caption='Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.', src="img/demos/demo3-th.jpg", alt="")
+					li
+						a(href="img/demos/demo4.jpg")
+							img(src="img/demos/demo4-th.jpg", alt="")
+					li
+						a(href="img/demos/demo5.jpg")
+							img(data-caption='Integer posuere erat a ante venenatis dapibus posuere velit aliquet.', src="img/demos/demo5-th.jpg", alt="")
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// FORMS
+				h2 Forms
+				form
+					fieldset
+						legend Fieldset
+						.row
+							.large-12.columns
+								label Input Label
+								input(type='text', placeholder='large-12.columns')
+						.row
+							.large-4.columns
+								label Input Label
+								input(type='text', placeholder='large-4.columns')
+							.large-4.columns
+								label Input Label
+								input(type='text', placeholder='large-4.columns')
+							.large-4.columns
+								.row.collapse
+									label Input Label
+									.small-9.columns
+										input(type='text', placeholder='small-9.columns')
+									.small-3.columns
+										span.postfix .com
+						.row
+							.large-12.columns
+								label Textarea Label
+								textarea(placeholder='small-12.columns')
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// INLINE LABELS
+				h2 Inline Labels
+				p Sometimes you want a form with labels to the left of your inputs. Piece of cake. You can put the label inside a different column to the left of the input. Then add a class of 
+					code right
+					to the label to have it align to the right.
+				p Adding a class of 
+					code inline
+					will have it vertically center against an input. You can use one or both of these classes to accomplish the look you want.
+				form
+					.row
+						.small-8
+							.row
+								.small-3.columns
+									label.right.inline(for='right-label') Label
+								.small-9.columns
+									input#right-label(type='text', placeholder='Inline Text Input')
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// PRE/POSTFIX LABELS & ACTIONS
+				h2 Pre/Postfix Labels & Actions
+				p Foundation forms support actions tied to buttons, and prefix / postfix labels, through a versatile approach using special grid properties. Essentially you can use 
+					code 'row class="collapse"'
+					to create label / action / input combinations. You use the Foundation columns to define the size of the pre/postfix 
+					code 'span class="postfix"'
+					| or 
+					code 'span class="prefix"'
+					. Here are a few examples:
+				form
+					.row.collapse
+						.small-3.large-2.columns
+							span.prefix http://
+						.small-9.large-10.columns
+							input(type='text', placeholder='Enter your URL...')
+					.row
+						.large-6.columns
+							.row.collapse
+								.small-10.columns
+									input(type='text', placeholder='Hex Value')
+								.small-2.columns
+									a.button.prefix(href='#') Action
+						.large-6.columns
+							.row.collapse
+								.small-9.columns
+									input(type='text', placeholder='Value')
+								.small-3.columns
+									span.postfix.radius Label
+				p You'll notice that on the last postfix element, we've included the class of
+				code radius 
+				. This adds the border radius on the appropriate edge depending on whether it's a prefix or a postfix element. You can even include buttons with these styles, just apply the
+				code .button 
+				as well as the pre/postfix class.
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// ERROR STATES
+				h2 Error States
+				p Foundation includes error states for labels, inputs and messaging that you can have your app generate programatically. You can attach a class of 
+					code error 
+					either to the individual elements (label, input, small) or to a column/div.
+				form
+					.row
+						.large-6.columns
+							label.error Error
+							input.error(type='text')
+							small.error Invalid entry
+						.large-6.columns.error
+							label Another Error
+							input(type='text')
+							small Invalid entry
+					textarea.error(placeholder='Message...')
+					small.error Invalid entry
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// CUSTOM FORMS
+				h2 Custom Forms
+				form.custom
+					.row
+						.large-4.columns
+							label(for='radio1')
+								input#radio1(name='radio1', type='radio', style='display: none;', checked='checked')  
+								|  Radio Button 1
+							label(for='radio1')
+								input#radio2(name='radio1', type='radio', style='display: none;') 
+								|  Radio Button 2
+							label(for='radio1')
+								input#radio3(name='radio1', type='radio', disabled='disabled', style='display: none;') 
+								|  Radio Button 3
+						.large-4.columns
+							label(for='checkbox1')
+								input#checkbox1(type='checkbox', style='display: none;') 
+								|  Label for Checkbox
+							label(for='checkbox2')
+								input#checkbox2(type='checkbox', checked='checked', style='display: none;') 
+								|  Label for Checkbox
+							label(for='checkbox3')
+								input#checkbox3(type='checkbox', checked='checked', style='display: none;') 
+								|  Label for Checkbox
+						.large-4.columns
+							label(for='customDropdown1') Medium Example
+							select#customDropdown1.medium
+								option(disabled='disabled') This is a dropdown
+								option This is another option
+								option This is another option too
+								option Look, a third option
+		
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				h2 Abide
+				h4.subheader Abide is an HTML5 form validation library that supports the native API by using patterns and required attributes.
+				form.custom(data-abide='data-abide')
+					fieldset
+						legend Fieldset
+						.row
+							.large-12.columns
+								label(for='password') Password 
+									small required
+								input#password(type='password', placeholder='LittleW0men.', name='password', required='required')
+								small.error(data-error-message='data-error-message') Passwords must be at least 8 characters with 1 capital letter, 1 number, and one special character.
+						.row
+							.large-12.columns
+								label(for='phone') Phone 
+								input#phone(type='tel', placeholder='1 234-567-8910')
+								small.error(data-error-message='data-error-message') Please enter a properly formatted telephone number.
+						.row
+							.large-4.columns
+								label(for='email') Email
+								input#email(type='email', placeholder='foundation@zurb.com')
+								small.error Valid email required.
+							.large-4.columns
+								label(for='url') URL 
+									small required
+								input#url(type='url', placeholder='http://zurb.com', required='required')
+								small.error(data-error-message='data-error-message') Valid URL required.
+							.large-4.columns
+								.row.collapse
+									label(for='customDropdown1') Hardest to find in grocery 
+										small required
+									select#customDropdown1.medium(required='required')
+										option(value='') Select grocery item
+										option(value='first') Green Chilies
+										option(value='second') Raisins
+										option(value='third') Panko bread crumbs
+										option(value='fourth') Assistance
+									small.error(data-error-message='data-error-message') Broke.
+						.row
+							.large-12.columns
+								hr
+						.row
+							.large-6.columns
+								label(for='radio1')
+									input#radio1(name='radio1', type='radio', required='required')
+									span.custom.radio 
+									|  Radio Button 1
+								label(for='radio1')
+									input#radio1(name='radio1', type='radio', required='required')
+									span.custom.radio 
+									|  Radio Button 2
+								label(for='radio1')
+									input#radio1(name='radio1', type='radio', required='required')
+									span.custom.radio 
+									|  Radio Button 3
+							.large-6.columns
+								label(for='checkbox1')
+									input#checkbox1(type='checkbox', style='display: none;', required='required')
+									span.custom.checkbox 
+									|  Label for Checkbox
+								label(for='checkbox2')
+									input#checkbox2(type='checkbox', checked='CHECKED', style='display: none;', required='required')
+									span.custom.checkbox.checked 
+									|  Label for Checkbox
+								label(for='checkbox3')
+									input#checkbox3(type='checkbox', checked='CHECKED', style='display: none;', required='required')
+									span.custom.checkbox.checked 
+									|  Label for Checkbox
+						.row
+							.large-12.columns
+								hr
+						.row
+							.large-12.columns
+								label(for='remarks') Closing Remarks
+								textarea#remarks(name='remarks', placeholder='Leave your remarks here.')
+						.row
+							.large-12.columns
+								button.medium.button.green(type='submit') Submit
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// FORM ELEMENTS
+				h2 Forms Elements
+				table.large-12.columns
+					thead
+						tr
+							th Type
+							th Element
+							th Disabled Elements
+							th Code
+					tbody
+						tr
+							td
+								p Input, Autofocus
+							td
+								<input autofocus="">
+							td
+								<input autofocus="" disabled="">
+							td 
+								code &lt;input autofocus=""&gt;
+								
+						tr
+							td
+								p Input
+							td
+								<input>
+							td
+								<input disabled="">
+							td 
+								code &lt;input&gt;
+								
+						tr
+							td
+								p Input, Required
+							td
+								<form><input required=""><input type="submit"></form>
+							td
+								<form><input required="" disabled=""><input type="submit" disabled=""></form>
+							td
+								code 
+									&lt;form&gt;
+									br
+									&lt;input required=""&gt;&lt;input type="submit"&gt;
+									br
+									&lt;/form&gt;
+						tr
+							td
+								p Input Type: Text
+							td
+								<input type="text">
+							td
+								<input type="text" disabled="">
+							td
+								code &lt;input type=text&gt;
+						tr
+							td
+								p Text Area
+							td
+								<textarea></textarea>
+							td
+								<textarea disabled=""></textarea>
+							td
+								code &lt;textarea&gt;&lt;/textarea&gt;
+						tr
+							td
+								p Input Type: Password
+							td
+								<input type="password" placeholder="password">
+							td
+								<input type="password" placeholder="password" disabled="">
+							td
+								code &lt;input type=password placeholder=password&gt;
+								
+						tr
+							td
+								p Radios
+							td
+								<input type="radio">
+							td
+								<input type="radio" disabled="">
+							td
+								code
+									&lt;input type=radio&gt;
+									
+						tr
+							td
+								p Radio, checked
+							td
+								<input type="radio" checked="">
+							td
+								<input type="radio" checked="" disabled="">
+							td
+								code
+									&lt;input type=radio checked&gt;
+						
+						tr
+							td
+								p Checkbox
+
+							td
+								<input type="checkbox">
+							td
+								<input type="checkbox" disabled="">
+							td
+								code
+									&lt;input type=checkbox&gt;
+						
+						tr
+							td
+								p Checkbox, checked
+							td
+								<input type="checkbox" checked="">
+							td
+								<input type="checkbox" checked="" disabled="">
+							td
+								code
+									&lt;input type=checkbox checked&gt;
+						
+						tr
+							td
+								p Select
+							td
+								<select><option></option><option>Option 1</option></select>
+							td
+								<select disabled=""><option></option><option>Option 1</option></select>
+							td
+								code
+									&lt;select&gt;
+									br
+									&lt;option&gt;&lt;/option&gt;
+									br
+									&lt;option&gt;Option 1&lt;/option&gt;
+									br
+									&lt;/select&gt;
+							
+						
+						tr
+							td
+								p Select, Group
+							td
+								<select><optgroup label="Option group 1"><option>Option 1</option><option>Option 2</option></optgroup><optgroup><option>Option 3</option></optgroup></select>
+							td
+								<select disabled=""><optgroup label="Option group 1"><option>Option 1</option><option>Option 2</option></optgroup><optgroup><option>Option 3</option></optgroup></select>
+							td
+								code
+									&lt;select&gt;
+									br
+									&lt;optgroup label="Option group 1"&gt;
+									br
+									&lt;option&gt;Option 1&lt;/option&gt;
+									br
+									&lt;option&gt;Option 2&lt;/option&gt;
+									br
+									&lt;/optgroup&gt;
+									br
+									&lt;optgroup&gt;
+									br
+									&lt;option&gt;Option 3&lt;/option&gt;
+									br
+									&lt;/optgroup&gt;
+									br
+									&lt;/select&gt;
+							
+						
+						tr
+							td
+								p Placeholder text
+							td
+								<input type="text" placeholder="placeholder">
+							td
+								<input type="text" placeholder="placeholder" disabled="">
+							td
+								code
+									&lt;input type=text placeholder=placeholder&gt;
+						
+						tr
+							td
+								p Search
+							td
+								<input type="search">
+							td
+								<input type="search" disabled="">
+							td
+								code
+									&lt;input type=search&gt;
+						
+						tr
+							td
+								p File Chooser
+							td
+								<input type="file">
+							td
+								<input type="file" disabled="">
+							td
+								code
+									&lt;input type=file&gt;
+						
+						tr
+							td
+								p Fieldset
+							td
+								<fieldset><legend>Legend</legend><label for="field">Label</label><input id="field"></fieldset>
+							td
+								<fieldset disabled=""><legend>Legend</legend><label for="field">Label</label><input id="field"></fieldset>
+							td
+								code
+									&lt;fieldset&gt;
+									br
+									&lt;legend&gt;Legend&lt;/legend&gt;
+									br
+									&lt;label for=field&gt;Label&lt;/label&gt;
+									br
+									&lt;input id=field&gt;
+									br
+									&lt;/fieldset&gt;
+							
+						
+						tr
+							td
+								p Submit
+							td
+								<input type="submit">
+							td
+								<input type="submit" disabled="">
+							td
+								code
+									&lt;input type=submit&gt;
+						
+						tr
+							td
+								p Button Elements
+							td
+								<button>Button</button>
+							td
+								<button disabled="">Button</button>
+							td
+								code
+									&lt;button&gt;Button&lt;/button&gt;
+						
+						tr
+							td
+								p Reset
+							td
+								<input type="reset">
+							td
+								<input type="reset" disabled="">
+							td
+								code
+									&lt;input type=reset&gt;
+						
+						tr
+							td
+								p Email
+							td
+								<input type="email">
+							td
+								<input type="email" disabled="">
+							td
+								code
+									&lt;input type=email&gt;
+						
+						tr
+							td
+								p Telephone
+							td
+								<input type="tel">
+							td
+								<input type="tel" disabled="">
+							td
+								code
+									&lt;input type=tel&gt;
+						
+						tr
+							td
+								p URL
+							td
+								<input type="url">
+							td
+								<input type="url" disabled="">
+							td
+								code
+									&lt;input type=url&gt;
+						
+						tr
+							td
+								p Number
+							td
+								<input type="number">
+							td
+								<input type="number" disabled="">
+							td
+								code
+									&lt;input type=number&gt;
+						
+						tr
+							td
+								p Number, steps with max
+							td
+								<input type="number" min="0" max="15" step="3">
+							td
+								<input type="number" min="0" max="15" step="3" disabled="">
+							td
+								code
+									&lt;input type=number min=0 max=15 step=3&gt;
+						
+						tr
+							td
+								p Range Slider
+							td
+								<input type="range">
+							td
+								<input type="range" disabled="">
+							td
+								code
+									&lt;input type=range&gt;
+						
+						tr
+							td
+								p Range slider, steps with max
+							td
+								<input type="range" min="0" max="15" step="3">
+							td
+								<input type="range" min="0" max="15" step="3" disabled="">
+							td
+								code
+									&lt;input type=range min=0 max=15 step=3&gt;
+						
+						tr
+							td
+								p Date
+							td
+								<input type="date">
+							td
+								<input type="date" disabled="">
+							td
+								code
+									&lt;input type=date&gt;
+						
+						tr
+							td
+								p Month
+							td
+								<input type="month">
+							td
+								<input type="month" disabled="">
+							td
+								code
+									&lt;input type=month&gt;
+						
+						tr
+							td
+								p Week
+							td
+								<input type="week">
+							td
+								<input type="week" disabled="">
+							td
+								code
+									&lt;input type=week&gt;
+						
+						tr
+							td
+								p Time
+							td
+								<input type="time">
+							td
+								<input type="time" disabled="">
+							td
+								code
+									&lt;input type=time&gt;
+						
+						tr
+							td
+								p Datetime
+							td
+								<input type="datetime">
+							td
+								<input type="datetime" disabled="">
+							td
+								code
+									&lt;input type=datetime&gt;
+						
+						tr
+							td
+								p Datetime, Local
+							td
+								<input type="datetime-local">
+							td
+								<input type="datetime-local" disabled="">
+							td
+								code
+									&lt;input type=datetime-local&gt;
+						
+						tr
+							td
+								p Color
+							td
+								<input type="color">
+							td
+								<input type="color" disabled="">
+							td
+								code
+									&lt;input type=color&gt;
+						
+						tr
+							td
+								p Color, preselected
+							td
+								<input type="color" value="#e76252">
+							td
+								<input type="color" value="#e76252" disabled="">
+							td
+								code
+									&lt;input type=color value="#e76252"&gt;
+			
+		
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// DROPDOWNS
+				h2 Dropdowns
+				a.button.radius(href='#', data-dropdown='tinyDrop') Link Dropdown »
+				a.button.radius(href='#', data-dropdown='contentDrop') Content Dropdown »
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// FLEX VIDEO
+				h2 Flex Video
+				.flex-video
+					iframe(width='420', height='315', src='http://www.youtube.com/embed/0_EW8aNgKlA', frameborder='0', allowfullscreen='allowfullscreen')
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// INLINE LISTS
+				h2 Inline Lists
+				ul.inline-list
+					li
+						a(href='#') Link 1
+					li
+						a(href='#') Link 2
+					li
+						a(href='#') Link 3
+					li
+						a(href='#') Link 4
+					li
+						a(href='#') Link 5
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// INTERCHANGE
+				h2 Interchange
+				p The Foundation Interchange component utilizes the  
+					code data-interchange
+					attribute for specifying your media queries and their respective images.
+		.row
+			.large-12.columns
+				p
+				img(src="img/demos/interchange/smallest.jpg", data-interchange='[img/demos/interchange/smallest.jpg, (default)], [img/demos/interchange/smallest.jpg, (screen and (max-width: 568px))], [img/demos/interchange/small.jpg, (small)], [img/demos/interchange/med.jpg, (medium)], [img/demos/interchange/large.jpg, (large)]')
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// JOYRIDE
+				h2 Joyride
+				a#start-jr.secondary.button.radius Start Joyride
+				h5#numero1.so-awesome Build Joyride with HTML
+				p#numero2.so-awesome Stop Number 2 for You!
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// KEYSTROKE
+				h2 Keystroke
+				p To make something pretty, press and hold
+				kbd cmd + alt + shift + w + a + !
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// LABELS
+				h2 Labels
+				p
+					span.label Regular Label
+					br
+					span.radius.secondary.label Radius Secondary Label
+					br
+					span.round.alert.label Round Alert Label
+					br
+					span.success.label Success Label
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// MAGELLAN
+				h2 Magellan
+				div(data-magellan-expedition='fixed')
+					dl.sub-nav
+						dd(data-magellan-arrival='build')
+							a(href='#build') Build with HTML
+						dd(data-magellan-arrival='js')
+							a(href='#js') Using Javascript
+				h5(data-magellan-destination='build') Build With Predefined HTML Structure
+				p Nullam quis risus eget urna mollis ornare vel eu leo. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper.
+				h5(data-magellan-destination='js') Awesome JS Goodness
+				p Nullam quis risus eget urna mollis ornare vel eu leo. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper.
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// ORBIT
+				h2 Orbit
+		.row
+			.large-6.columns
+				ul#featured1(data-orbit='data-orbit', data-options='timer_speed:5000;')
+					li
+						img(src="img/demos/demo1.jpg", alt="")
+						.orbit-caption Caption One. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+					li
+						img(src="img/demos/demo2.jpg", alt="")
+						.orbit-caption Caption Two. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+					li
+						img(src="img/demos/demo3.jpg", alt="")
+						.orbit-caption Caption Three. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// PAGINATION
+				h2 Pagination
+				ul.pagination
+					li.arrow.unavailable
+						a(href="") «
+					li.current
+						a(href="") 1
+					li
+						a(href="") 2
+					li
+						a(href="") 3
+					li
+						a(href="") 4
+					li.unavailable
+						a(href="") …
+					li
+						a(href="") 12
+					li
+						a(href="") 13
+					li.arrow
+						a(href="") »
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// PANELS
+				h2 Panels
+		.row
+			.large-6.columns
+				.panel.radius
+					h5 This is a regular panel.
+					p It has an easy to override visual style, and is appropriately subdued.
+			.large-6.columns
+				.panel.callout.radius
+					h5 This is a callout panel.
+					p It's a little ostentatious, but useful for important content.
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// PRICING TABLES
+				h2 Pricing Tables
+		.row
+			.large-4.columns
+				ul.pricing-table
+					li.title Standard
+					li.price $99.99
+					li.description An awesome description
+					li.bullet-item 1 Database
+					li.bullet-item 5GB Storage
+					li.bullet-item 20 Users
+					li.cta-button
+						a.button(href='#') Buy Now
+		br
+		hr
+		br
+		.row
+			.large-12.columns			
+				// PROGRESS BARS
+				h2 Progress Bars
+				.progress.large-6
+					span.meter(style='width: 40%;')
+				.radius.progress.success.large-8
+					span.meter(style='width: 80%;')
+				.nice.round.progress.alert.large-10
+					span.meter(style='width: 30%;')
+				.nice.secondary.progress
+					span.meter(style='width: 50%;')
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// REVEAL
+				h2 Reveal
+				a.radius.button(href='#', data-reveal-id='firstModal') Example Modal…
+				a.radius.button(href='#', data-reveal-id='videoModal') Example Modal w/Video…
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// SECTION
+				h2 Section
+				.row
+					.large-3.columns
+						.section-container.vertical-nav(data-section='vertical-nav', data-options='one_up: false;')
+							section
+								p.title
+									a(href='#') Section 1
+								.content
+									ul.side-nav
+										li
+											a(href='#') Link 1
+										li
+											a(href='#') Link 2
+										li
+											a(href='#') Link 3
+										li.divider
+										li
+											a(href='#') Link 1
+							section
+								p.title
+									a(href='#') Section 2
+								.content
+									ul.side-nav
+										li
+											a(href='#') Link 1
+										li
+											a(href='#') Link 2
+										li
+											a(href='#') Link 3
+										li.divider
+										li
+											a(href='#') Link 1
+					.large-9.columns
+						.section-container.horizontal-nav(data-section='horizontal-nav', data-options='one_up: false;')
+							section
+								p.title
+									a(href='#') Section 1
+								.content
+									ul.side-nav
+										li
+											a(href='#') Link 1
+										li
+											a(href='#') Link 2
+										li
+											a(href='#') Link 3
+										li.divider
+										li
+											a(href='#') Link 1
+							section
+								p.title
+									a(href='#') Section 2
+								.content
+									ul.side-nav
+										li
+											a(href='#') Link 1
+										li
+											a(href='#') Link 2
+										li
+											a(href='#') Link 3
+										li.divider
+										li
+											a(href='#') Link 1
+											
+											
+						.section-container.tabs(data-section='tabs')
+							section
+								p.title(data-section-title)
+									a(href='#panel1') Section 1
+								.content(data-section-content)
+									p Section 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							section
+								p.title(data-section-title)
+									a(href='#panel2') Section 2
+								.content(data-section-content)
+									p Section 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							section
+								p.title(data-section-title)
+									a(href='#panel3') Section 3
+								.content(data-section-content)
+									form
+										.row.collapse
+											.large-2.columns
+												label.inline Your Name
+											.large-10.columns
+												input#yourName(type='text', placeholder='Jane Smith')
+										.row.collapse
+											.large-2.columns
+												label.inlineYour Email
+											.large-10.columns
+												input#yourEmail(type='text', placeholder='jane@smithco.com')
+										label What's up?
+										textarea(rows='4')
+										button.radius.button(type='submit') Submit
+
+				h2 More Section Variations
+
+				h6 Build With Predefined HTML Classes
+				.section-container.auto(data-section)
+					section
+						p.title(data-section-title)
+							a(href='#panel1') Section 1
+						.content(data-section-content)
+							p Content of section 1.
+					section
+						p.title(data-section-title)
+							a(href='#panel2') Section 2
+						.content(data-section-content)
+							p Content of section 2.
+
+				h6 Accordion
+				.section-container.accordion(data-section='accordion')
+					section
+						p.title(data-section-title)
+							a(href='#') Section 1
+						.content(data-section-content)
+							p Content of section 1.
+					section
+						p.title(data-section-title)
+							a(href='#') Section 2
+						.content(data-section-content)
+							p Content of section 2.
+
+				h6 Tabs
+				.section-container.tabs(data-section='tabs')
+					section
+						p.title(data-section-title)
+							a(href='#') Section 1
+						.content(data-section-content)
+							p Content of section 1.
+					section
+						p.title(data-section-title)
+							a(href='#') Section 2
+						.content(data-section-content)
+							p Content of section 2.
+
+				h6 Vertical Tabs
+				.section-container.vertical-tabs(data-section='vertical-tabs')
+					section
+						p.title(data-section-title)
+							a(href='#') Section 1
+						.content(data-section-content)
+							p Content of section 1.
+					section
+						p.title(data-section-title)
+							a(href='#') Section 2
+						.content(data-section-content)
+							p Content of section 2.
+					section
+						p.title(data-section-title)
+							a(href='#') Section 3
+						.content(data-section-content)
+							p Content of section 3.
+
+				h6 Vertical Nav/Accordion
+				.row
+					.large-3.columns
+						.section-container.vertical-nav(data-section='vertical-nav', data-options='one_up: false;')
+							section
+								p.title(data-section-title)
+									a(href='#') Section 1
+								.content(data-section-content)
+									ul.side-nav
+										li
+											a(href='#') Link 1
+										li
+											a(href='#') Link 2
+										li
+											a(href='#') Link 3
+										li.divider
+										li
+											a(href='#') Link 1
+							section
+								p.title(data-section-title)
+									a(href='#') Section 2
+								.content(data-section-content)
+									ul.side-nav
+										li
+											a(href='#') Link 1
+										li
+											a(href='#') Link 2
+										li
+											a(href='#') Link 3
+										li.divider
+										li
+											a(href='#') Link 1
+					.large-9.columns
+						p Content to the right of the navigation.
+
+				h6 Horizontal Nav/Nav Bar
+				.section-container.horizontal-nav(data-section='horizontal-nav', data-options='one_up: false;')
+					section
+						p.title(data-section-title)
+							a(href='#') Section 1
+						.content(data-section-content)
+							ul.side-nav
+								li
+									a(href='#') Link 1
+								li
+									a(href='#') Link 2
+								li
+									a(href='#') Link 3
+								li.divider
+								li
+									a(href='#') Link 1
+					section
+						p.title(data-section-title)
+							a(href='#') Section 2
+						.content(data-section-content)
+							ul.side-nav
+								li
+									a(href='#') Link 1
+								li
+									a(href='#') Link 2
+								li
+									a(href='#') Link 3
+								li.divider
+								li
+									a(href='#') Link 1
+
+				h6 Deep Linking
+				.section-container.auto(data-section, data-options='deep_linking: true')
+					section
+						p.title(data-section-title)
+							a(href='#section1') Section 1
+						.content(data-slug='section1', data-section-content)
+							p Content of section 1.
+					section
+						p.title(data-section-title)
+							a(href='#section2') Section 2
+						.content(data-slug='section2', data-section-content)
+							p Content of section 2.
+
+				h6 Nested Sections
+				.section-container.auto(data-section)
+					section
+						p.title
+							a(href='#section1') ROOT: Section 1
+						.content(data-section-content)
+							p Content 1 Summary Paragraphs
+							.section-container.auto(data-section)
+								section
+									p.title
+										a(href='#section1-1') DETAIL: #1
+									.content
+										p Detail awesome stuff!
+								section
+									p.title
+										a(href='#section1-2') DETAIL: #2
+									.content
+										p Detail awesome stuff numeroe duo.
+					section
+						p.title
+							a(href='#section2') ROOT: Section 2
+						.content(data-section-content)
+							p Content 2
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// SIDE NAV
+				h2 Side Nav
+				.row
+					.large-4.columns.end
+						ul.side-nav
+							li.active
+								a(href='#') Link 1
+							li
+								a(href='#') Link 2
+							li.divider
+							li
+								a(href='#') Link 3
+							li
+								a(href='#') Link 4
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// SUB NAV
+				h2 Sub Nav
+				dl.sub-nav
+					dt Filter:
+					dd.active
+						a(href='#') All
+					dd
+						a(href='#') Active
+					dd
+						a(href='#') Pending
+					dd
+						a(href='#') Suspended
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// SWITCH 
+				h2 Switch
+				.small-2.switch.tiny
+					input#a(name='switch-a', type='radio', checked='checked')
+					label(for='a', onclick='') Off
+					input#a1(name='switch-a', type='radio')
+					label(for='a1', onclick='') On
+					span
+				.small-3.switch.small
+					input#b(name='switch-b', type='radio', checked='checked')
+					label(for='b', onclick='') Off
+					input#b1(name='switch-b', type='radio')
+					label(for='b1', onclick='') On
+					span
+				.small-4.switch.radius
+					input#c(name='switch-c', type='radio', checked='checked')
+					label(for='c', onclick='') Off
+					input#c1(name='switch-c', type='radio')
+					label(for='c1', onclick='') On
+					span
+				.small-6.switch.large.round
+					input#d(name='switch-d', type='radio', checked='checked')
+					label(for='d', onclick='') Off
+					input#d1(name='switch-d', type='radio')
+					label(for='d1', onclick='') On
+					span
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// TABLES
+				h2 Tables
+				table
+					thead
+						tr
+							td Table Header
+							td Table Header
+							td Table Header
+							td Table Header
+					tbody
+						tr
+							td Content Goes Here
+							td This is longer content Donec id elit non mi porta gravida at eget metus.
+							td Content Goes Here
+							td Content Goes Here
+						tr
+							td Content Goes Here
+							td This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.
+							td Content Goes Here
+							td Content Goes Here
+						tr
+							td Content Goes Here
+							td This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.
+							td Content Goes Here
+							td Content Goes Here
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// THUMBNAILS
+				h2 Thumbnails
+				p
+					a.th(href="#")
+						img(src="img/demos/demo1-th.jpg", alt="")
+				p
+					a.th(href="#")
+						img(src="img/demos/demo2-th.jpg", alt="")
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// TOOLTIPS
+				h2 Tooltips
+				p The tooltips can be positioned on the 
+					span.has-tip(data-tooltip='', data-width='210', title="I'm on bottom and the default position.") "tip-bottom"
+					, which is the default position, 
+					span.has-tip.tip-top.noradius(data-tooltip='', data-width='210', title="I'm on the top and I'm not rounded!") "tip-top"
+					| (hehe), 
+					span.has-tip.tip-left(data-tooltip='left', data-width='90', title="I'm on the left!") "tip-left"
+					, or 
+					span.has-tip.tip-right(data-tooltip='right', data-width='120', title="I'm on the right!") "tip-right" 
+					of the target element by adding the appropriate class to them. You can even add your own custom class to style each tip differently. On a small device, the tooltips are full width and bottom aligned.
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				// TOP BAR
+				h2 Top Bar
+				nav.top-bar
+					ul.title-area
+						// <Title>Area</Title>
+						li.name
+							h1
+								a(href='#') Top Bar
+						// <Remove>the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone</Remove>
+						li.toggle-topbar.menu-icon
+							a(href='#')
+								span Menu
+					section.top-bar-section
+						ul.left
+							li.has-dropdown
+								a(href='#') Main Item 1
+								ul.dropdown
+									li
+										label Level One
+									li
+										a(href='#') Sub-item 1
+									li
+										a(href='#') Sub-item 2
+									li
+										a(href='#') Sub-item 3
+									li.has-dropdown
+										a(href='#') Sub-item 4
+										ul.dropdown
+											li
+												label Level Two
+												li.has-dropdown
+													a(href='#') Sub-item 1
+													ul.dropdown
+														li
+															label Level Three
+																li.has-dropdown
+																	a(href='#') Sub-item 1
+																	ul.dropdown
+																		li
+																			label Level Four
+																		li
+																			a(href='#') Sub-item 1
+																		li
+																			a(href='#') Sub-item 2
+																		li
+																			a(href='#') Sub-item 3
+																		li
+																			a(href='#') Sub-item 4
+															li
+																a(href='#') Sub-item 2
+															li
+																a(href='#') Sub-item 3
+															li
+																a(href='#') Sub-item 4
+															li
+																a(href='#') Sub-item 5
+						// <Right>Nav Section</Right>
+						ul.right
+							li
+								a(href='#') Item 2
+				nav.top-bar
+					ul.title-area
+						// <Title>Area</Title>
+						li.name
+							h1
+								a(href='#') Top Bar Title
+						// <Remove>the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone</Remove>
+						li.toggle-topbar.menu-icon
+							a(href='#')
+								span Menu
+					section.top-bar-section
+						// <Left>Nav Section</Left>
+						ul.left
+							li.active
+								a(href='#') Main Item 1
+							li.has-dropdown
+								a(href='#') Main Item 2
+								ul.dropdown
+									li.has-dropdown
+										a(href='#') Dropdown Level 1a
+										ul.dropdown
+											li
+												label Dropdown Level 2 Label
+											li
+												a(href='#') Dropdown Level 2a
+											li
+												a(href='#') Dropdown Level 2b
+											li.has-dropdown
+												a(href='#') Dropdown Level 2c
+												ul.dropdown
+													li
+														label Dropdown Level 3 Label
+													li
+														a(href='#') Dropdown Level 3a
+													li
+														a(href='#') Dropdown Level 3b
+													li
+														a(href='#') Dropdown Level 3c
+											li
+												a(href='#') Dropdown Level 2d
+											li
+												a(href='#') Dropdown Level 2e
+											li
+												a(href='#') Dropdown Level 2f
+									li
+										a(href='#') Dropdown Level 1b
+									li
+										a(href='#') Dropdown Level 1c
+									li
+										a(href='#') Dropdown Level 1d
+									li
+										a(href='#') Dropdown Level 1e
+									li
+										a(href='#') Dropdown Level 1f
+									li
+										a(href='#') See all →
+							// <Right>Nav Section</Right>
+						ul.right
+							li.has-dropdown
+								a(href='#') Main Item 3
+								ul.dropdown
+									li
+										label Dropdown Level 1 Label
+									li.has-dropdown
+										a(href='#') Dropdown Level 1a
+										ul.dropdown
+											li
+												a(href='#') Dropdown Level 2a
+											li
+												a(href='#') Dropdown Level 2b
+											li.has-dropdown
+												a(href='#') Dropdown Level 2c
+												ul.dropdown
+													li
+														a(href='#') Dropdown Level 3a
+													li
+														a(href='#') Dropdown Level 3b
+													li
+														a(href='#') Dropdown Level 3c
+											li
+												a(href='#') Dropdown Level 2d
+											li
+												a(href='#') Dropdown Level 2e
+											li
+												a(href='#') Dropdown Level 2f
+									li
+										a(href='#') Dropdown Level 1b
+									li
+										a(href='#') Dropdown Level 1c
+									li
+										label Dropdown Level 1 Label
+									li
+										a(href='#') Dropdown Level 1d
+									li
+										a(href='#') Dropdown Level 1e
+									li
+										a(href='#') Dropdown Level 1f
+									li
+										a(href='#') See all →
+							li.has-form
+								form
+									.row.collapse
+										.small-8.columns
+											input(type='text')
+										.small-4.columns
+											a.alert.button(href='#') Search
+							li.has-form
+								a.button(href='#') Button!
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				//TWENTYTWENTY
+				h2 TwentyTwenty
+				.row
+					.large-4.columns
+						h3 Basic Usage
+						p Demonstrates basic usage of the plugin.
+					.large-8.columns
+						.twentytwenty-container
+							img(src='img/twentytwenty/1_1.jpg')
+							img(src='img/twentytwenty/1_2.jpg')
+				.row
+					.large-4.columns
+						h3 Side by side
+						p Using multiple comparisons at once.
+					.large-4.columns
+						.twentytwenty-container
+							img(src='img/twentytwenty/2_1.jpg')
+							img(src='img/twentytwenty/2_2.jpg')
+					.large-4.columns
+						.twentytwenty-container
+							img(src='img/twentytwenty/3_1.jpg')
+							img(src='img/twentytwenty/3_2.jpg')
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				h2 Type
+				h1 h1. This is a very large header.
+				h2 h2. This is a large header.
+				h3 h3. This is a medium header.
+				h4 h4. This is a moderate header.
+				h5 h5. This is a small header. h1.
+				h6 h6. This is a tiny header. h1.
+				br
+				h1.subheader
+					| h1.subheader
+				h2.subheader 
+					| h2.subheader
+				h3.subheader 
+					| h3.subheader
+				h4.subheader 
+					| h4.subheader
+				h5.subheader 
+					| h5.subheader
+				h6.subheader 
+					| h6.subheader
+				br
+				h1 h1.
+					small Small segment header.
+				h2 h2.
+					small Small segment header.
+				h3 h3.
+					small Small segment header.
+				h4 h4.
+					small Small segment header.
+				h5 h5.
+					small Small segment header.
+				h6 h6.
+					small Small segment header.
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				h3 Type Styles
+		.row
+			.large-4.columns
+				p "EM":
+					em Paragraph with emphasis
+				p "STRONG":
+					strong Paragraph with strong
+				p "CODE":
+					code Paragraph of code
+			.large-4.columns
+				p "MARK":
+					mark Paragraph with "mark".
+				p "SUB":
+					sub Paragraph with "sub".
+				p "SUP":
+					sup Paragraph with "sup".
+			.large-4.columns
+				p "SMALL":
+					small Paragraph with "small".
+				p "ABBR":
+					abbr Paragraph with "abbr".
+				p "ACRONYM":
+					acronym Paragraph with "abbr".
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				h3 Type Alignments
+		.row
+			.large-3.columns
+				p.text-left
+					strong "TEXT-LEFT": 
+					Paragraph with "text-left". Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu.
+			.large-3.columns
+				p.text-right
+					strong "TEXT-RIGHT": 
+					Paragraph with "text-right". Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu.
+			.large-3.columns
+				p.text-center
+					strong "TEXT-CENTER": 
+					Paragraph with "text-center". Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu.
+			.large-3.columns
+				p.text-justify
+					strong "TEXT-JUSTIFY": 
+					Paragraph with "text-justify". Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu.
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				h2 Paragraphs
+		.row
+			.large-10.columns
+				h4.subheader 10 columns
+				p Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum.
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et orci felis, in condimentum augue. Aenean vel felis rhoncus nibh egestas consectetur. Fusce risus lorem, dignissim in pellentesque ac, mattis id nisi. Nunc varius, quam quis dapibus mollis, massa est placerat arcu, sit amet auctor erat orci non mauris. Nam sem neque, ultricies sit amet tincidunt eu, varius ut est. Nullam sed laoreet nulla. Quisque at mauris odio. In hac habitasse platea dictumst. Cras massa massa, dapibus vel dapibus quis, placerat vitae sem. Duis varius ligula sit amet eros dignissim et blandit libero vehicula. Curabitur et feugiat purus. Maecenas faucibus congue dui, tempus blandit enim dictum non. In pretium turpis a diam consectetur vestibulum.
+				p Aenean tristique feugiat urna, et accumsan nisl tempor eget. Suspendisse at tempus ante. Nullam nec metus vitae nulla mattis consectetur a vitae enim. Mauris vel tempus erat. Maecenas eu aliquam orci. Maecenas fermentum nibh quis ligula facilisis quis viverra orci sollicitudin. Sed ut suscipit libero. Suspendisse potenti. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam blandit, nisi sit amet posuere consectetur, arcu risus eleifend sem, et tristique justo mauris id orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas accumsan magna vitae magna imperdiet ut imperdiet augue vulputate.
+				p In hac habitasse platea dictumst. Nulla bibendum lacus ut mauris pretium dignissim. Nulla facilisi. Nam venenatis ullamcorper commodo. Fusce nec libero sed ipsum dapibus luctus quis a tellus. Curabitur eu arcu sed metus rhoncus venenatis. Nunc aliquet enim in magna facilisis sed auctor diam semper. Nulla quis orci tortor.
+			.large-2.columns
+				h4.subheader 2 columns
+				p Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu.
+			hr
+			.large-8.columns
+				h4.subheader 8 columns
+				p Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum.
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et orci felis, in condimentum augue. Aenean vel felis rhoncus nibh egestas consectetur. Fusce risus lorem, dignissim in pellentesque ac, mattis id nisi. Nunc varius, quam quis dapibus mollis, massa est placerat arcu, sit amet auctor erat orci non mauris. Nam sem neque, ultricies sit amet tincidunt eu, varius ut est. Nullam sed laoreet nulla. Quisque at mauris odio. In hac habitasse platea dictumst. Cras massa massa, dapibus vel dapibus quis, placerat vitae sem. Duis varius ligula sit amet eros dignissim et blandit libero vehicula. Curabitur et feugiat purus. Maecenas faucibus congue dui, tempus blandit enim dictum non. In pretium turpis a diam consectetur vestibulum.
+				p Aenean tristique feugiat urna, et accumsan nisl tempor eget. Suspendisse at tempus ante. Nullam nec metus vitae nulla mattis consectetur a vitae enim. Mauris vel tempus erat. Maecenas eu aliquam orci. Maecenas fermentum nibh quis ligula facilisis quis viverra orci sollicitudin. Sed ut suscipit libero. Suspendisse potenti. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam blandit, nisi sit amet posuere consectetur, arcu risus eleifend sem, et tristique justo mauris id orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas accumsan magna vitae magna imperdiet ut imperdiet augue vulputate.
+				p In hac habitasse platea dictumst. Nulla bibendum lacus ut mauris pretium dignissim. Nulla facilisi. Nam venenatis ullamcorper commodo. Fusce nec libero sed ipsum dapibus luctus quis a tellus. Curabitur eu arcu sed metus rhoncus venenatis. Nunc aliquet enim in magna facilisis sed auctor diam semper. Nulla quis orci tortor.
+			.large-4.columns
+				h4.subheader 4 columns
+				p Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum.
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et orci felis, in condimentum augue. Aenean vel felis rhoncus nibh egestas consectetur. Fusce risus lorem, dignissim in pellentesque ac, mattis id nisi. Nunc varius, quam quis dapibus mollis, massa est placerat arcu, sit amet auctor erat orci non mauris. Nam sem neque, ultricies sit amet tincidunt eu, varius ut est. Nullam sed laoreet nulla. Quisque at mauris odio. In hac habitasse platea dictumst. Cras massa massa, dapibus vel dapibus quis, placerat vitae sem. Duis varius ligula sit amet eros dignissim et blandit libero vehicula. Curabitur et feugiat purus. Maecenas faucibus congue dui, tempus blandit enim dictum non. In pretium turpis a diam consectetur vestibulum.
+			hr
+			.large-6.columns
+				h4.subheader 6 columns
+				p Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum.
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et orci felis, in condimentum augue. Aenean vel felis rhoncus nibh egestas consectetur. Fusce risus lorem, dignissim in pellentesque ac, mattis id nisi. Nunc varius, quam quis dapibus mollis, massa est placerat arcu, sit amet auctor erat orci non mauris. Nam sem neque, ultricies sit amet tincidunt eu, varius ut est. Nullam sed laoreet nulla. Quisque at mauris odio. In hac habitasse platea dictumst. Cras massa massa, dapibus vel dapibus quis, placerat vitae sem. Duis varius ligula sit amet eros dignissim et blandit libero vehicula. Curabitur et feugiat purus. Maecenas faucibus congue dui, tempus blandit enim dictum non. In pretium turpis a diam consectetur vestibulum.
+				p Aenean tristique feugiat urna, et accumsan nisl tempor eget. Suspendisse at tempus ante. Nullam nec metus vitae nulla mattis consectetur a vitae enim. Mauris vel tempus erat. Maecenas eu aliquam orci. Maecenas fermentum nibh quis ligula facilisis quis viverra orci sollicitudin. Sed ut suscipit libero. Suspendisse potenti. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam blandit, nisi sit amet posuere consectetur, arcu risus eleifend sem, et tristique justo mauris id orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas accumsan magna vitae magna imperdiet ut imperdiet augue vulputate.
+				p In hac habitasse platea dictumst. Nulla bibendum lacus ut mauris pretium dignissim. Nulla facilisi. Nam venenatis ullamcorper commodo. Fusce nec libero sed ipsum dapibus luctus quis a tellus. Curabitur eu arcu sed metus rhoncus venenatis. Nunc aliquet enim in magna facilisis sed auctor diam semper. Nulla quis orci tortor.
+			.large-4.columns
+				h4.subheader 4 columns
+				p Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum.
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et orci felis, in condimentum augue. Aenean vel felis rhoncus nibh egestas consectetur. Fusce risus lorem, dignissim in pellentesque ac, mattis id nisi. Nunc varius, quam quis dapibus mollis, massa est placerat arcu, sit amet auctor erat orci non mauris. Nam sem neque, ultricies sit amet tincidunt eu, varius ut est. Nullam sed laoreet nulla. Quisque at mauris odio. In hac habitasse platea dictumst. Cras massa massa, dapibus vel dapibus quis, placerat vitae sem. Duis varius ligula sit amet eros dignissim et blandit libero vehicula. Curabitur et feugiat purus. Maecenas faucibus congue dui, tempus blandit enim dictum non. In pretium turpis a diam consectetur vestibulum.
+			.large-2.columns
+				h4.subheader 2 columns
+				p Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit. Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum.
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				//CHARACTER SET
+				h2 Characters
+		.row
+			.large-6.columns
+				h4.subheader Normal
+				h3(style='font-weight: normal;') Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
+					br 1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( ) - _ = + [ ] { } \ | : ; ' " < > . , / ? ’ “ ” … – —
+			.large-6.columns
+				h4.subheader Italic
+				h3(style='font-style: italic; font-weight: normal;') Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
+					br 1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( ) - _ = + [ ] { } \ | : ; ' " < > . , / ? ’ “ ” … – —
+			hr
+			.large-6.columns
+				h4.subheader Bold
+				h3 Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
+					br 1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( ) - _ = + [ ] { } \ | : ; ' " < > . , / ? ’ “ ” … – —
+			.large-6.columns
+				h4.subheader Bold Italic
+				h3(style='font-style: italic;') Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
+					br 1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( ) - _ = + [ ] { } \ | : ; ' " < > . , / ? ’ “ ” … – —
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				h2 Typography Grayscale
+		.row
+			.large-12.columns
+				.large-6.columns.panel(style='background: white;')
+					p(style='color: #000;') #000 The best kind of originality is that which comes after a sound apprenticeship, that which shall prove to be the blending of a firm conception of useful precedent and the progressive tendencies of an able mind. For, let a man be as able and original as he may, he cannot afford to
+					p(style='color: #333;') #333 The best kind of originality is that which comes after a sound apprenticeship, that which shall prove to be the blending of a firm conception of useful precedent and the progressive tendencies of an able mind. For, let a man be as able and original as he may, he cannot afford to
+					p(style='color: #666;') #666 The best kind of originality is that which comes after a sound apprenticeship, that which shall prove to be the blending of a firm conception of useful precedent and the progressive tendencies of an able mind. For, let a man be as able and original as he may, he cannot afford to
+					p(style='color: #999;') #999 The best kind of originality is that which comes after a sound apprenticeship, that which shall prove to be the blending of a firm conception of useful precedent and the progressive tendencies of an able mind. For, let a man be as able and original as he may, he cannot afford to
+					p(style='color: #ccc;') #CCC The best kind of originality is that which comes after a sound apprenticeship, that which shall prove to be the blending of a firm conception of useful precedent and the progressive tendencies of an able mind. For, let a man be as able and original as he may, he cannot afford to
+				.large-6.columns.panel(style='background: black;')
+					p(style='color: #fff;') #FFF The best kind of originality is that which comes after a sound apprenticeship, that which shall prove to be the blending of a firm conception of useful precedent and the progressive tendencies of an able mind. For, let a man be as able and original as he may, he cannot afford to
+					p(style='color: #ccc;') #CCC The best kind of originality is that which comes after a sound apprenticeship, that which shall prove to be the blending of a firm conception of useful precedent and the progressive tendencies of an able mind. For, let a man be as able and original as he may, he cannot afford to
+					p(style='color: #999;') #999 The best kind of originality is that which comes after a sound apprenticeship, that which shall prove to be the blending of a firm conception of useful precedent and the progressive tendencies of an able mind. For, let a man be as able and original as he may, he cannot afford to
+					p(style='color: #666;') #666 The best kind of originality is that which comes after a sound apprenticeship, that which shall prove to be the blending of a firm conception of useful precedent and the progressive tendencies of an able mind. For, let a man be as able and original as he may, he cannot afford to
+					p(style='color: #333;') #333 The best kind of originality is that which comes after a sound apprenticeship, that which shall prove to be the blending of a firm conception of useful precedent and the progressive tendencies of an able mind. For, let a man be as able and original as he may, he cannot afford to
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				h2 HTML Useful Character Entities
+				p
+					b Note: Entity names are case sensitive!
+				table.large-12.columns
+					thead
+						tr
+							td Result
+							td Description
+							td Entity Name
+							td Entity Number
+					tr
+						td
+						td non-breaking space
+						td #{'&nbsp;'}
+						td #{'&#160;'}
+					tr
+						td <
+						td less than
+						td #{'&lt;'}
+						td #{'&#60;'}
+					tr
+						td >
+						td greater than
+						td #{'&gt;'}
+						td #{'&#62;'}
+					tr
+						td &
+						td ampersand
+						td #{'&amp;'}
+						td #{'&#38;'}
+					tr
+						td ¢
+						td cent
+						td #{'&cent;'}
+						td #{'&#162;'}
+					tr
+						td £
+						td pound
+						td #{'&pound;'}
+						td #{'&#163;'}
+					tr
+						td ¥
+						td yen
+						td #{'&yen;'}
+						td #{'&#165;'}
+					tr
+						td €
+						td euro
+						td #{'&euro;'}
+						td #{'&#8364;'}
+					tr
+						td §
+						td section
+						td #{'&sect;'}
+						td #{'&#167;'}
+					tr
+						td ©
+						td copyright
+						td #{'&copy;'}
+						td #{'&#169;'}
+					tr
+						td ®
+						td registered trademark
+						td #{'&reg;'}
+						td #{'&#174;'}
+					tr
+						td ™
+						td trademark
+						td #{'&trade;'}
+						td #{'&#8482;'}
+						
+				br
+				br
+				hr
+				br
+				
+				h2 ISO 8859-1 Symbols
+				table.large-12.columns
+					thead
+						tr
+							td Character
+							td Entity Number
+							td Entity Name
+							td Description
+					tr
+						td
+						td #{'&#160;'}
+						td #{'&nbsp;'}
+						td non-breaking space
+					tr
+						td ¡
+						td #{'&#161;'}
+						td #{'&iexcl;'}
+						td inverted exclamation mark
+					tr
+						td ¢
+						td #{'&#162;'}
+						td #{'&cent;'}
+						td cent
+					tr
+						td £
+						td #{'&#163;'}
+						td #{'&pound;'}
+						td pound
+					tr
+						td ¤
+						td #{'&#164;'}
+						td #{'&curren;'}
+						td currency
+					tr
+						td ¥
+						td #{'&#165;'}
+						td #{'&yen;'}
+						td yen
+					tr
+						td ¦
+						td #{'&#166;'}
+						td #{'&brvbar;'}
+						td broken vertical bar
+					tr
+						td §
+						td #{'&#167;'}
+						td #{'&sect;'}
+						td section
+					tr
+						td ¨
+						td #{'&#168;'}
+						td #{'&uml;'}
+						td spacing diaeresis
+					tr
+						td ©
+						td #{'&#169;'}
+						td #{'&copy;'}
+						td copyright
+					tr
+						td ª
+						td #{'&#170;'}
+						td #{'&ordf;'}
+						td feminine ordinal indicator
+					tr
+						td «
+						td #{'&#171;'}
+						td #{'&laquo;'}
+						td angle quotation mark (left)
+					tr
+						td ¬
+						td #{'&#172;'}
+						td #{'&not;'}
+						td negation
+					tr
+						td ­­
+						td #{'&#173;'}
+						td #{'&shy;'}
+						td soft hyphen
+					tr
+						td ®
+						td #{'&#174;'}
+						td #{'&reg;'}
+						td registered trademark
+					tr
+						td ¯
+						td #{'&#175;'}
+						td #{'&macr;'}
+						td spacing macron
+					tr
+						td °
+						td #{'&#176;'}
+						td #{'&deg;'}
+						td degree
+					tr
+						td ±
+						td #{'&#177;'}
+						td #{'&plusmn;'}
+						td plus-or-minus
+					tr
+						td ²
+						td #{'&#178;'}
+						td #{'&sup2;'}
+						td superscript 2
+					tr
+						td ³
+						td #{'&#179;'}
+						td #{'&sup3;'}
+						td superscript 3
+					tr
+						td ´
+						td #{'&#180;'}
+						td #{'&acute;'}
+						td spacing acute
+					tr
+						td µ
+						td #{'&#181;'}
+						td #{'&micro;'}
+						td micro
+					tr
+						td ¶
+						td #{'&#182;'}
+						td #{'&para;'}
+						td paragraph
+					tr
+						td ·
+						td #{'&#183;'}
+						td #{'&middot;'}
+						td middle dot
+					tr
+						td ¸
+						td #{'&#184;'}
+						td #{'&cedil;'}
+						td spacing cedilla
+					tr
+						td ¹
+						td #{'&#185;'}
+						td #{'&sup1;'}
+						td superscript 1
+					tr
+						td º
+						td #{'&#186;'}
+						td #{'&ordm;'}
+						td masculine ordinal indicator
+					tr
+						td »
+						td #{'&#187;'}
+						td #{'&raquo;'}
+						td angle quotation mark (right)
+					tr
+						td ¼
+						td #{'&#188;'}
+						td #{'&frac14;'}
+						td fraction 1/4
+					tr
+						td ½
+						td #{'&#189;'}
+						td #{'&frac12;'}
+						td fraction 1/2
+					tr
+						td ¾
+						td #{'&#190;'}
+						td #{'&frac34;'}
+						td fraction 3/4
+					tr
+						td ¿
+						td #{'&#191;'}
+						td #{'&iquest;'}
+						td inverted question mark
+					tr
+						td ×
+						td #{'&#215;'}
+						td #{'&times;'}
+						td multiplication
+					tr
+						td ÷
+						td #{'&#247;'}
+						td #{'&divide;'}
+						td division
+						
+				br
+				br
+				hr
+				br
+				
+				h2 ISO 8859-1 Characters
+				table.large-12.columns
+					thead
+						tr
+							td Character
+							td Entity Number
+							td Entity Name
+							td Description
+					tr
+						td À
+						td #{'&#192;'}
+						td #{'&Agrave;'}
+						td capital a, grave accent
+					tr
+						td Á
+						td #{'&#193;'}
+						td #{'&Aacute;'}
+						td capital a, acute accent
+					tr
+						td Â
+						td #{'&#194;'}
+						td #{'&Acirc;'}
+						td capital a, circumflex accent
+					tr
+						td Ã
+						td #{'&#195;'}
+						td #{'&Atilde;'}
+						td capital a, tilde
+					tr
+						td Ä
+						td #{'&#196;'}
+						td #{'&Auml;'}
+						td capital a, umlaut mark
+					tr
+						td Å
+						td #{'&#197;'}
+						td #{'&Aring;'}
+						td capital a, ring
+					tr
+						td Æ
+						td #{'&#198;'}
+						td #{'&AElig;'}
+						td capital ae
+					tr
+						td Ç
+						td #{'&#199;'}
+						td #{'&Ccedil;'}
+						td capital c, cedilla
+					tr
+						td È
+						td #{'&#200;'}
+						td #{'&Egrave;'}
+						td capital e, grave accent
+					tr
+						td É
+						td #{'&#201;'}
+						td #{'&Eacute;'}
+						td capital e, acute accent
+					tr
+						td Ê
+						td #{'&#202;'}
+						td #{'&Ecirc;'}
+						td capital e, circumflex accent
+					tr
+						td Ë
+						td #{'&#203;'}
+						td #{'&Euml;'}
+						td capital e, umlaut mark
+					tr
+						td Ì
+						td #{'&#204;'}
+						td #{'&Igrave;'}
+						td capital i, grave accent
+					tr
+						td Í
+						td #{'&#205;'}
+						td #{'&Iacute;'}
+						td capital i, acute accent
+					tr
+						td Î
+						td #{'&#206;'}
+						td #{'&Icirc;'}
+						td capital i, circumflex accent
+					tr
+						td Ï
+						td #{'&#207;'}
+						td #{'&Iuml;'}
+						td capital i, umlaut mark
+					tr
+						td Ð
+						td #{'&#208;'}
+						td #{'&ETH;'}
+						td capital eth, Icelandic
+					tr
+						td Ñ
+						td #{'&#209;'}
+						td #{'&Ntilde;'}
+						td capital n, tilde
+					tr
+						td Ò
+						td #{'&#210;'}
+						td #{'&Ograve;'}
+						td capital o, grave accent
+					tr
+						td Ó
+						td #{'&#211;'}
+						td #{'&Oacute;'}
+						td capital o, acute accent
+					tr
+						td Ô
+						td #{'&#212;'}
+						td #{'&Ocirc;'}
+						td capital o, circumflex accent
+					tr
+						td Õ
+						td #{'&#213;'}
+						td #{'&Otilde;'}
+						td capital o, tilde
+					tr
+						td Ö
+						td #{'&#214;'}
+						td #{'&Ouml;'}
+						td capital o, umlaut mark
+					tr
+						td Ø
+						td #{'&#216;'}
+						td #{'&Oslash;'}
+						td capital o, slash
+					tr
+						td Ù
+						td #{'&#217;'}
+						td #{'&Ugrave;'}
+						td capital u, grave accent
+					tr
+						td Ú
+						td #{'&#218;'}
+						td #{'&Uacute;'}
+						td capital u, acute accent
+					tr
+						td Û
+						td #{'&#219;'}
+						td #{'&Ucirc;'}
+						td capital u, circumflex accent
+					tr
+						td Ü
+						td #{'&#220;'}
+						td #{'&Uuml;'}
+						td capital u, umlaut mark
+					tr
+						td Ý
+						td #{'&#221;'}
+						td #{'&Yacute;'}
+						td capital y, acute accent
+					tr
+						td Þ
+						td #{'&#222;'}
+						td #{'&THORN;'}
+						td capital THORN, Icelandic
+					tr
+						td ß
+						td #{'&#223;'}
+						td #{'&szlig;'}
+						td small sharp s, German
+					tr
+						td à
+						td #{'&#224;'}
+						td #{'&agrave;'}
+						td small a, grave accent
+					tr
+						td á
+						td #{'&#225;'}
+						td #{'&aacute;'}
+						td small a, acute accent
+					tr
+						td â
+						td #{'&#226;'}
+						td #{'&acirc;'}
+						td small a, circumflex accent
+					tr
+						td ã
+						td #{'&#227;'}
+						td #{'&atilde;'}
+						td small a, tilde
+					tr
+						td ä
+						td #{'&#228;'}
+						td #{'&auml;'}
+						td small a, umlaut mark
+					tr
+						td å
+						td #{'&#229;'}
+						td #{'&aring;'}
+						td small a, ring
+					tr
+						td æ
+						td #{'&#230;'}
+						td #{'&aelig;'}
+						td small ae
+					tr
+						td ç
+						td #{'&#231;'}
+						td #{'&ccedil;'}
+						td small c, cedilla
+					tr
+						td è
+						td #{'&#232;'}
+						td #{'&egrave;'}
+						td small e, grave accent
+					tr
+						td é
+						td #{'&#233;'}
+						td #{'&eacute;'}
+						td small e, acute accent
+					tr
+						td ê
+						td #{'&#234;'}
+						td #{'&ecirc;'}
+						td small e, circumflex accent
+					tr
+						td ë
+						td #{'&#235;'}
+						td #{'&euml;'}
+						td small e, umlaut mark
+					tr
+						td ì
+						td #{'&#236;'}
+						td #{'&igrave;'}
+						td small i, grave accent
+					tr
+						td í
+						td #{'&#237;'}
+						td #{'&iacute;'}
+						td small i, acute accent
+					tr
+						td î
+						td #{'&#238;'}
+						td #{'&icirc;'}
+						td small i, circumflex accent
+					tr
+						td ï
+						td #{'&#239;'}
+						td #{'&iuml;'}
+						td small i, umlaut mark
+					tr
+						td ð
+						td #{'&#240;'}
+						td #{'&eth;'}
+						td small eth, Icelandic
+					tr
+						td ñ
+						td #{'&#241;'}
+						td #{'&ntilde;'}
+						td small n, tilde
+					tr
+						td ò
+						td #{'&#242;'}
+						td #{'&ograve;'}
+						td small o, grave accent
+					tr
+						td ó
+						td #{'&#243;'}
+						td #{'&oacute;'}
+						td small o, acute accent
+					tr
+						td ô
+						td #{'&#244;'}
+						td #{'&ocirc;'}
+						td small o, circumflex accent
+					tr
+						td õ
+						td #{'&#245;'}
+						td #{'&otilde;'}
+						td small o, tilde
+					tr
+						td ö
+						td #{'&#246;'}
+						td #{'&ouml;'}
+						td small o, umlaut mark
+					tr
+						td ø
+						td #{'&#248;'}
+						td #{'&oslash;'}
+						td small o, slash
+					tr
+						td ù
+						td #{'&#249;'}
+						td #{'&ugrave;'}
+						td small u, grave accent
+					tr
+						td ú
+						td #{'&#250;'}
+						td #{'&uacute;'}
+						td small u, acute accent
+					tr
+						td û
+						td #{'&#251;'}
+						td #{'&ucirc;'}
+						td small u, circumflex accent
+					tr
+						td ü
+						td #{'&#252;'}
+						td #{'&uuml;'}
+						td small u, umlaut mark
+					tr
+						td ý
+						td #{'&#253;'}
+						td #{'&yacute;'}
+						td small y, acute accent
+					tr
+						td þ
+						td #{'&#254;'}
+						td #{'&thorn;'}
+						td small thorn, Icelandic
+					tr
+						td ÿ
+						td #{'&#255;'}
+						td #{'&yuml;'}
+						td small y, umlaut mark
+						
+				br
+				br
+				hr
+				br
+				
+				h2 Math Symbols Supported by HTML
+				table.large-12.columns
+					thead
+						tr
+							td Character
+							td Entity Number
+							td Entity Name
+							td Description
+					tr
+						td ∀
+						td #{'&#8704;'}
+						td #{'&forall;'}
+						td for all
+					tr
+						td ∂
+						td #{'&#8706;'}
+						td #{'&part;'}
+						td part
+					tr
+						td ∃
+						td #{'&#8707;'}
+						td #{'&exist;'}
+						td exists
+					tr
+						td ∅
+						td #{'&#8709;'}
+						td #{'&empty;'}
+						td empty
+					tr
+						td ∇
+						td #{'&#8711;'}
+						td #{'&nabla;'}
+						td nabla
+					tr
+						td ∈
+						td #{'&#8712;'}
+						td #{'&isin;'}
+						td isin
+					tr
+						td ∉
+						td #{'&#8713;'}
+						td #{'&notin;'}
+						td notin
+					tr
+						td ∋
+						td #{'&#8715;'}
+						td #{'&ni;'}
+						td ni
+					tr
+						td ∏
+						td #{'&#8719;'}
+						td #{'&prod;'}
+						td prod
+					tr
+						td ∑
+						td #{'&#8721;'}
+						td #{'&sum;'}
+						td sum
+					tr
+						td −
+						td #{'&#8722;'}
+						td #{'&minus;'}
+						td minus
+					tr
+						td ∗
+						td #{'&#8727;'}
+						td #{'&lowast;'}
+						td lowast
+					tr
+						td √
+						td #{'&#8730;'}
+						td #{'&radic;'}
+						td square root
+					tr
+						td ∝
+						td #{'&#8733;'}
+						td #{'&prop;'}
+						td proportional to
+					tr
+						td ∞
+						td #{'&#8734;'}
+						td #{'&infin;'}
+						td infinity
+					tr
+						td ∠
+						td #{'&#8736;'}
+						td #{'&ang;'}
+						td angle
+					tr
+						td ∧
+						td #{'&#8743;'}
+						td #{'&and;'}
+						td and
+					tr
+						td ∨
+						td #{'&#8744;'}
+						td #{'&or;'}
+						td or
+					tr
+						td ∩
+						td #{'&#8745;'}
+						td #{'&cap;'}
+						td cap
+					tr
+						td ∪
+						td #{'&#8746;'}
+						td #{'&cup;'}
+						td cup
+					tr
+						td ∫
+						td #{'&#8747;'}
+						td #{'&int;'}
+						td integral
+					tr
+						td ∴
+						td #{'&#8756;'}
+						td #{'&there4;'}
+						td therefore
+					tr
+						td ∼
+						td #{'&#8764;'}
+						td #{'&sim;'}
+						td similar to
+					tr
+						td ≅
+						td #{'&#8773;'}
+						td #{'&cong;'}
+						td congruent to
+					tr
+						td ≈
+						td #{'&#8776;'}
+						td #{'&asymp;'}
+						td almost equal
+					tr
+						td ≠
+						td #{'&#8800;'}
+						td #{'&ne;'}
+						td not equal
+					tr
+						td ≡
+						td #{'&#8801;'}
+						td #{'&equiv;'}
+						td equivalent
+					tr
+						td ≤
+						td #{'&#8804;'}
+						td #{'&le;'}
+						td less or equal
+					tr
+						td ≥
+						td #{'&#8805;'}
+						td #{'&ge;'}
+						td greater or equal
+					tr
+						td ⊂
+						td #{'&#8834;'}
+						td #{'&sub;'}
+						td subset of
+					tr
+						td ⊃
+						td #{'&#8835;'}
+						td #{'&sup;'}
+						td superset of
+					tr
+						td ⊄
+						td #{'&#8836;'}
+						td #{'&nsub;'}
+						td not subset of
+					tr
+						td ⊆
+						td #{'&#8838;'}
+						td #{'&sube;'}
+						td subset or equal
+					tr
+						td ⊇
+						td #{'&#8839;'}
+						td #{'&supe;'}
+						td superset or equal
+					tr
+						td ⊕
+						td #{'&#8853;'}
+						td #{'&oplus;'}
+						td circled plus
+					tr
+						td ⊗
+						td #{'&#8855;'}
+						td #{'&otimes;'}
+						td circled times
+					tr
+						td ⊥
+						td #{'&#8869;'}
+						td #{'&perp;'}
+						td perpendicular
+					tr
+						td ⋅
+						td #{'&#8901;'}
+						td #{'&sdot;'}
+						td dot operator
+						
+				br
+				br
+				hr
+				br
+				
+				h2 Greek Letters Supported by HTML
+				table.large-12.columns
+					thead
+						tr
+							td Character
+							td Entity Number
+							td Entity Name
+							td Description
+					tr
+						td Α
+						td #{'&#913;'}
+						td #{'&Alpha;'}
+						td Alpha
+					tr
+						td Β
+						td #{'&#914;'}
+						td #{'&Beta;'}
+						td Beta
+					tr
+						td Γ
+						td #{'&#915;'}
+						td #{'&Gamma;'}
+						td Gamma
+					tr
+						td Δ
+						td #{'&#916;'}
+						td #{'&Delta;'}
+						td Delta
+					tr
+						td Ε
+						td #{'&#917;'}
+						td #{'&Epsilon;'}
+						td Epsilon
+					tr
+						td Ζ
+						td #{'&#918;'}
+						td #{'&Zeta;'}
+						td Zeta
+					tr
+						td Η
+						td #{'&#919;'}
+						td #{'&Eta;'}
+						td Eta
+					tr
+						td Θ
+						td #{'&#920;'}
+						td #{'&Theta;'}
+						td Theta
+					tr
+						td Ι
+						td #{'&#921;'}
+						td #{'&Iota;'}
+						td Iota
+					tr
+						td Κ
+						td #{'&#922;'}
+						td #{'&Kappa;'}
+						td Kappa
+					tr
+						td Λ
+						td #{'&#923;'}
+						td #{'&Lambda;'}
+						td Lambda
+					tr
+						td Μ
+						td #{'&#924;'}
+						td #{'&Mu;'}
+						td Mu
+					tr
+						td Ν
+						td #{'&#925;'}
+						td #{'&Nu;'}
+						td Nu
+					tr
+						td Ξ
+						td #{'&#926;'}
+						td #{'&Xi;'}
+						td Xi
+					tr
+						td Ο
+						td #{'&#927;'}
+						td #{'&Omicron;'}
+						td Omicron
+					tr
+						td Π
+						td #{'&#928;'}
+						td #{'&Pi;'}
+						td Pi
+					tr
+						td Ρ
+						td #{'&#929;'}
+						td #{'&Rho;'}
+						td Rho
+					tr
+						td
+						td undefined
+						td
+						td Sigmaf
+					tr
+						td Σ
+						td #{'&#931;'}
+						td #{'&Sigma;'}
+						td Sigma
+					tr
+						td Τ
+						td #{'&#932;'}
+						td #{'&Tau;'}
+						td Tau
+					tr
+						td Υ
+						td #{'&#933;'}
+						td #{'&Upsilon;'}
+						td Upsilon
+					tr
+						td Φ
+						td #{'&#934;'}
+						td #{'&Phi;'}
+						td Phi
+					tr
+						td Χ
+						td #{'&#935;'}
+						td #{'&Chi;'}
+						td Chi
+					tr
+						td Ψ
+						td #{'&#936;'}
+						td #{'&Psi;'}
+						td Psi
+					tr
+						td Ω
+						td #{'&#937;'}
+						td #{'&Omega;'}
+						td Omega
+					tr
+						td
+						td
+						td
+						td
+					tr
+						td α
+						td #{'&#945;'}
+						td #{'&alpha;'}
+						td alpha
+					tr
+						td β
+						td #{'&#946;'}
+						td #{'&beta;'}
+						td beta
+					tr
+						td γ
+						td #{'&#947;'}
+						td #{'&gamma;'}
+						td gamma
+					tr
+						td δ
+						td #{'&#948;'}
+						td #{'&delta;'}
+						td delta
+					tr
+						td ε
+						td #{'&#949;'}
+						td #{'&epsilon;'}
+						td epsilon
+					tr
+						td ζ
+						td #{'&#950;'}
+						td #{'&zeta;'}
+						td zeta
+					tr
+						td η
+						td #{'&#951;'}
+						td #{'&eta;'}
+						td eta
+					tr
+						td θ
+						td #{'&#952;'}
+						td #{'&theta;'}
+						td theta
+					tr
+						td ι
+						td #{'&#953;'}
+						td #{'&iota;'}
+						td iota
+					tr
+						td κ
+						td #{'&#954;'}
+						td #{'&kappa;'}
+						td kappa
+					tr
+						td λ
+						td #{'&#955;'}
+						td #{'&lambda;'}
+						td lambda
+					tr
+						td μ
+						td #{'&#956;'}
+						td #{'&mu;'}
+						td mu
+					tr
+						td ν
+						td #{'&#957;'}
+						td #{'&nu;'}
+						td nu
+					tr
+						td ξ
+						td #{'&#958;'}
+						td #{'&xi;'}
+						td xi
+					tr
+						td ο
+						td #{'&#959;'}
+						td #{'&omicron;'}
+						td omicron
+					tr
+						td π
+						td #{'&#960;'}
+						td #{'&pi;'}
+						td pi
+					tr
+						td ρ
+						td #{'&#961;'}
+						td #{'&rho;'}
+						td rho
+					tr
+						td ς
+						td #{'&#962;'}
+						td #{'&sigmaf;'}
+						td sigmaf
+					tr
+						td σ
+						td #{'&#963;'}
+						td #{'&sigma;'}
+						td sigma
+					tr
+						td τ
+						td #{'&#964;'}
+						td #{'&tau;'}
+						td tau
+					tr
+						td υ
+						td #{'&#965;'}
+						td #{'&upsilon;'}
+						td upsilon
+					tr
+						td φ
+						td #{'&#966;'}
+						td #{'&phi;'}
+						td phi
+					tr
+						td χ
+						td #{'&#967;'}
+						td #{'&chi;'}
+						td chi
+					tr
+						td ψ
+						td #{'&#968;'}
+						td #{'&psi;'}
+						td psi
+					tr
+						td ω
+						td #{'&#969;'}
+						td #{'&omega;'}
+						td omega
+					tr
+						td
+						td
+						td
+						td
+					tr
+						td ϑ
+						td #{'&#977;'}
+						td #{'&thetasym;'}
+						td theta symbol
+					tr
+						td ϒ
+						td #{'&#978;'}
+						td #{'&upsih;'}
+						td upsilon symbol
+					tr
+						td ϖ
+						td #{'&#982;'}
+						td #{'&piv;'}
+						td pi symbol
+				
+				br
+				br
+				hr
+				br
+				h2 Other Entities Supported by HTML
+				table.large-12.columns
+					thead
+						tr
+							td Character
+							td Entity Number
+							td Entity Name
+							td Description
+					tr
+						td Œ
+						td #{'&#338;'}
+						td #{'&OElig;'}
+						td capital ligature OE
+					tr
+						td œ
+						td #{'&#339;'}
+						td #{'&oelig;'}
+						td small ligature oe
+					tr
+						td Š
+						td #{'&#352;'}
+						td #{'&Scaron;'}
+						td capital S with caron
+					tr
+						td š
+						td #{'&#353;'}
+						td #{'&scaron;'}
+						td small S with caron
+					tr
+						td Ÿ
+						td #{'&#376;'}
+						td #{'&Yuml;'}
+						td capital Y with diaeres
+					tr
+						td ƒ
+						td #{'&#402;'}
+						td #{'&fnof;'}
+						td f with hook
+					tr
+						td ˆ
+						td #{'&#710;'}
+						td #{'&circ;'}
+						td modifier letter circumflex accent
+					tr
+						td ˜
+						td #{'&#732;'}
+						td #{'&tilde;'}
+						td small tilde
+					tr
+						td
+						td #{'&#8194;'}
+						td #{'&ensp;'}
+						td en space
+					tr
+						td
+						td #{'&#8195;'}
+						td #{'&emsp;'}
+						td em space
+					tr
+						td
+						td #{'&#8201;'}
+						td #{'&thinsp;'}
+						td thin space
+					tr
+						td ‌
+						td #{'&#8204;'}
+						td #{'&zwnj;'}
+						td zero width non-joiner
+					tr
+						td ‍
+						td #{'&#8205;'}
+						td #{'&zwj;'}
+						td zero width joiner
+					tr
+						td ‎
+						td #{'&#8206;'}
+						td #{'&lrm;'}
+						td left-to-right mark
+					tr
+						td ‏
+						td #{'&#8207;'}
+						td #{'&rlm;'}
+						td right-to-left mark
+					tr
+						td –
+						td #{'&#8211;'}
+						td #{'&ndash;'}
+						td en dash
+					tr
+						td —
+						td #{'&#8212;'}
+						td #{'&mdash;'}
+						td em dash
+					tr
+						td ‘
+						td #{'&#8216;'}
+						td #{'&lsquo;'}
+						td left single quotation mark
+					tr
+						td ’
+						td #{'&#8217;'}
+						td #{'&rsquo;'}
+						td right single quotation mark
+					tr
+						td ‚
+						td #{'&#8218;'}
+						td #{'&sbquo;'}
+						td single low-9 quotation mark
+					tr
+						td “
+						td #{'&#8220;'}
+						td #{'&ldquo;'}
+						td left double quotation mark
+					tr
+						td ”
+						td #{'&#8221;'}
+						td #{'&rdquo;'}
+						td right double quotation mark
+					tr
+						td „
+						td #{'&#8222;'}
+						td #{'&bdquo;'}
+						td double low-9 quotation mark
+					tr
+						td †
+						td #{'&#8224;'}
+						td #{'&dagger;'}
+						td dagger
+					tr
+						td ‡
+						td #{'&#8225;'}
+						td #{'&Dagger;'}
+						td double dagger
+					tr
+						td •
+						td #{'&#8226;'}
+						td #{'&bull;'}
+						td bullet
+					tr
+						td …
+						td #{'&#8230;'}
+						td #{'&hellip;'}
+						td horizontal ellipsis
+					tr
+						td ‰
+						td #{'&#8240;'}
+						td #{'&permil;'}
+						td per mille
+					tr
+						td ′
+						td #{'&#8242;'}
+						td #{'&prime;'}
+						td minutes
+					tr
+						td ″
+						td #{'&#8243;'}
+						td #{'&Prime;'}
+						td seconds
+					tr
+						td ‹
+						td #{'&#8249;'}
+						td #{'&lsaquo;'}
+						td single left angle quotation
+					tr
+						td ›
+						td #{'&#8250;'}
+						td #{'&rsaquo;'}
+						td single right angle quotation
+					tr
+						td ‾
+						td #{'&#8254;'}
+						td #{'&oline;'}
+						td overline
+					tr
+						td €
+						td #{'&#8364;'}
+						td #{'&euro;'}
+						td euro
+					tr
+						td ™
+						td #{'&#8482;'} or #{'&#153;'}
+						td #{'&trade;'}
+						td trademark
+					tr
+						td ←
+						td #{'&#8592;'}
+						td #{'&larr;'}
+						td left arrow
+					tr
+						td ↑
+						td #{'&#8593;'}
+						td #{'&uarr;'}
+						td up arrow
+					tr
+						td →
+						td #{'&#8594;'}
+						td #{'&rarr;'}
+						td right arrow
+					tr
+						td ↓
+						td #{'&#8595;'}
+						td #{'&darr;'}
+						td down arrow
+					tr
+						td ↔
+						td #{'&#8596;'}
+						td #{'&harr;'}
+						td left right arrow
+					tr
+						td ↵
+						td #{'&#8629;'}
+						td #{'&crarr;'}
+						td carriage return arrow
+					tr
+						td ⌈
+						td #{'&#8968;'}
+						td #{'&lceil;'}
+						td left ceiling
+					tr
+						td ⌉
+						td #{'&#8969;'}
+						td #{'&rceil;'}
+						td right ceiling
+					tr
+						td ⌊
+						td #{'&#8970;'}
+						td #{'&lfloor;'}
+						td left floor
+					tr
+						td ⌋
+						td #{'&#8971;'}
+						td #{'&rfloor;'}
+						td right floor
+					tr
+						td ◊
+						td #{'&#9674;'}
+						td #{'&loz;'}
+						td lozenge
+					tr
+						td ♠
+						td #{'&#9824;'}
+						td #{'&spades;'}
+						td spade
+					tr
+						td ♣
+						td #{'&#9827;'}
+						td #{'&clubs;'}
+						td club
+					tr
+						td ♥
+						td #{'&#9829;'}
+						td #{'&hearts;'}
+						td heart
+					tr
+						td ♦
+						td #{'&#9830;'}
+						td #{'&diams;'}
+						td diamond
+							
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				h2 Lists
+				p Lists are helpful for, well, lists of things.
+		.row
+			.large-4.columns
+				h6 ul.disc
+				ul.disc
+					li List item with a much longer description or more content.
+					li List item
+					li List item
+						ul
+							li Nested List Item
+							li Nested List Item
+							li Nested List Item
+					li List item
+					li List item
+					li List item
+			.large-4.columns
+				h6 ul.circle
+				ul.circle
+					li List item with a much longer description or more content.
+					li List item
+					li List item
+						ul
+							li Nested List Item
+							li Nested List Item
+							li Nested List Item
+					li List item
+					li List item
+					li List item
+			.large-4.columns
+				h6 ul.square
+				ul.square
+					li List item with a much longer description or more content.
+					li List item
+					li List item
+						ul
+							li Nested List Item
+							li Nested List Item
+							li Nested List Item
+					li List item
+					li List item
+					li List item
+		.row
+			.large-4.columns
+				h6 Ordered Lists
+				ol
+					li List Item 1
+					li List Item 2
+						ol
+							li Nested List Item
+							li Nested List Item
+							li Nested List Item
+					li List Item 3
+			.large-8.columns
+				h6 Definition Lists
+				dl
+					dt Definition Title
+						dd Definition Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies vehicula ut id elit.
+			
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				h2 Blockquotes
+				p Sometimes other people say smart things, and you may want to mention that through a blockquote callout. We've got you covered.
+				blockquote I do not fear computers. I fear the lack of them. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.
+					cite Isaac Asimov
+
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				h2 V-Cards
+				p Here's a handy microformat-friendly list to 
+					em address all your needs.
+				ul.vcard
+					li.fn Gaius Baltar
+					li.street-address 123 Colonial Ave.
+					li.locality Caprica City
+					li
+						span.state Caprica ,
+						span.zip 12345
+					li.email
+						a(href='#') g.baltar@cmail.com
+			
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				h2 Print Styles
+				p Foundation includes print styles developed by HTML5 Boilerplate to give you some basic print-specific styles. These are activated when you print through a media query. It includes:
+				ul.disc
+					li Clearing out backgrounds, box shadows, and text shadows
+					li Appending link URLs after the anchor text
+					li Bordering blockquotes and pre elements
+					li Page cleanup and window minimization
+				p On top of that, Foundation includes a couple of simple classes you can use to control elements printing, or not printing. Simply attach 
+					code .print-only 
+					to an element to only show when printing, and 
+					code .hide-on-print 
+					to hide something when printing.
+		br
+		hr
+		br
+		.row
+			.large-12.columns
+				h2 Visibility Classes
+				h4 Screen Size Visibility Control (Show)
+				p The following text should describe the screen size you're using:
+				p.panel
+					strong.show-for-small You are on a small screen.
+					strong.show-for-medium You are on a medium screen.
+					strong.show-for-medium-up You are on a medium, large or xlarge screen.
+					strong.show-for-medium-down You are on a medium or small screen.
+					strong.show-for-large You are on a large screen.
+					strong.show-for-large-up You are on a large or xlarge screen.
+					strong.show-for-large-down You are on a large, medium or small screen.
+					strong.show-for-xlarge You are on a xlarge screen.
+				h4 Screen Size Visibility Control (Hide)
+				p The following text should describe the screen size you aren't using:
+				p.panel
+					strong.hide-for-small You are 
+						em not 
+						on a small screen.
+					strong.hide-for-medium You are 
+						em not 
+						on a medium screen.
+					strong.hide-for-medium-up You are 
+						em not 
+						on a medium, large or xlarge screen.
+					strong.hide-for-medium-down You are 
+						em not 
+						on a medium or small screen.
+					strong.hide-for-large You are 
+						em not 
+						on a large screen.
+					strong.hide-for-large-up You are 
+						em not 
+						on a large or xlarge screen.
+					strong.hide-for-large-down You are 
+						em 
+						not on a large, medium or small screen.
+					strong.hide-for-xlarge You are 
+						em not 
+						on a xlarge screen.
+				h4 Orientation Detection
+				p The following text should describe the device orientation you're using:
+				p.panel
+					strong.show-for-landscape You are in landscape orientation.
+					strong.show-for-portrait You are in portrait orientation.
+				h4 Touch Detection
+				p The following text should describe if you're using a touch device:
+				p.panel
+					strong.show-for-touch You are on a touch-enabled device.
+					strong.hide-for-touch You are not on a touch-enabled device.
+
+		br
+		hr
+		br
+		.row.full-width(style='max-width: 100%;')
+			.large-5.columns
+				h6
+					strong Made by ZURB
+				p Foundation is made by 
+					a(href='http://www.zurb.com/') ZURB
+					|, a product design company in Campbell, California. We've put more than 14 years of experience building web products, services and websites into this framework.
+				p: a(href='http://foundation.zurb.com/about.php') Foundation Info and Goodies →
+			.large-3.columns
+				h6
+					strong Using Foundation?
+				p Let us know how you're using Foundation and we might feature you as an example!
+				p: a(href="#") Get in touch →
+			.large-4.columns
+				h6
+					strong Need some help?
+				p For answers or help visit the 
+					a(href='http://foundation.zurb.com/docs/support.html') Support page .
+			
+		.row.full-width(style='max-width: 100%; background: #333; color: white; padding-top: 15px; padding-bottom: 0px;')
+			.large-3.columns
+				p Site content © 2013 ZURB, inc.
+			.large-9.columns
+				ul.inline-list.right
+					li
+						a(href='http://foundation.zurb.com') Home
+					li
+						a(href='http://foundation.zurb.com/download.php') Download
+					li
+						a(href='http://foundation.zurb.com/docs') Docs
+					li
+						a(href='http://foundation.zurb.com/docs/changelog.html') Changelog
+					li
+						a(href='http://foundation.zurb.com/about.php') About
+					li
+						a(href='http://feeds.feedburner.com/zurb/blog') Subscribe to the ZURBlog
+				
+					
+	
+		// <Dropdowns></Dropdowns>
+		ul#drop0.f-dropdown(data-dropdown-content='data-dropdown-content')
+			li
+				a(href='#') This is a link
+			li
+				a(href='#') This is another
+			li
+				a(href='#') Yet another
+		ul#drop1.f-dropdown(data-dropdown-content='data-dropdown-content')
+			li
+				a(href='#') This is a link
+			li
+				a(href='#') This is another
+			li
+				a(href='#') Yet another
+		ul#drop2.f-dropdown(data-dropdown-content='data-dropdown-content')
+			li
+				a(href='#') This is a link
+			li
+				a(href='#') This is another
+			li
+				a(href='#') Yet another
+		ul#drop3.f-dropdown(data-dropdown-content='data-dropdown-content')
+			li
+				a(href='#') This is a link
+			li
+				a(href='#') This is another
+			li
+				a(href='#') Yet another
+		ul#drop4.f-dropdown(data-dropdown-content='data-dropdown-content')
+			li
+				a(href='#') This is a link
+			li
+				a(href='#') This is another
+			li
+				a(href='#') Yet another
+		ul#drop5.f-dropdown(data-dropdown-content='data-dropdown-content')
+			li
+				a(href='#') This is a link
+			li
+				a(href='#') This is another
+			li
+				a(href='#') Yet another
+		ul#drop6.f-dropdown(data-dropdown-content='data-dropdown-content')
+			li
+				a(href='#') This is a link
+			li
+				a(href='#') This is another
+			li
+				a(href='#') Yet another
+		ul#drop7.f-dropdown(data-dropdown-content='data-dropdown-content')
+			li
+				a(href='#') This is a link
+			li
+				a(href='#') This is another
+			li
+				a(href='#') Yet another
+		ul#tinyDrop.f-dropdown(data-dropdown-content='data-dropdown-content')
+			li
+				a(href='#') This is a link
+			li
+				a(href='#') This is another
+			li
+				a(href='#') Yet another
+		#contentDrop.f-dropdown.content.medium(data-dropdown-content='data-dropdown-content')
+			h4 Title
+			p Some text that people will think is awesome! Some text that people will think is awesome! Some text that people will think is awesome!
+			img(src="img/demos/demo1.jpg", alt="")
+			p More test.
+			a.button(href='#') Button
+		//- Joyride
+		ol.joyride-list(data-joyride)
+			li(data-id='numero1', data-class='custom so-awesome', data-text='Next')
+				h4 Stop #1
+				p You can control all the details for you tour stop. Any valid HTML will work inside of Joyride.
+			li(data-id='numero2', data-button='Next')
+				h4 Stop #2
+				p Get the details right by styling Joyride with a custom stylesheet!
+			li(data-button='Next')
+				h4 Stop #3
+				p It works as a modal too!
+		// <Reveal>Modals</Reveal>
+		#firstModal.reveal-modal
+			h2 This is a modal.
+			p Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of 
+				code close-reveal-modal
+				. Clicking anywhere outside the modal will also dismiss it.
+			p Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.
+			p
+				a.secondary.button(href='#', data-reveal-id='secondModal') Second Modal…
+				a.close-reveal-modal ×
+		#secondModal.reveal-modal
+			h2 This is a second modal.
+			p See? It just slides into place after the other first modal. Very handy when you need subsequent dialogs, or when a modal option impacts or requires another decision.
+			a.close-reveal-modal ×
+		#videoModal.reveal-modal.large
+			h2 This modal has video
+			.flex-video
+				iframe(width='800', height='315', src='http://www.youtube.com/embed/IkOQw96cfyE', frameborder='0', allowfullscreen='allowfullscreen')
+			a.close-reveal-modal ×
+				
+		script
+			document.write('<script src=' +('__proto__' in {} ? 'javascripts/vendor/zepto' : 'javascripts/vendor/jquery') +'.js><\/script>')
+		
+		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js')
+		
+		script(src='javascripts/foundation/foundation.js')
+		script(src='javascripts/foundation/foundation.abide.js')
+		script(src='javascripts/foundation/foundation.alerts.js')
+		script(src='javascripts/foundation/foundation.clearing.js')
+		script(src='javascripts/foundation/foundation.cookie.js')
+		script(src='javascripts/foundation/foundation.dropdown.js')
+		script(src='javascripts/foundation/foundation.forms.js')
+		script(src='javascripts/foundation/foundation.interchange.js')
+		script(src='javascripts/foundation/foundation.joyride.js')
+		script(src='javascripts/foundation/foundation.magellan.js')
+		script(src='javascripts/foundation/foundation.orbit.js')
+		script(src='javascripts/foundation/foundation.placeholder.js')
+		script(src='javascripts/foundation/foundation.reveal.js')
+		script(src='javascripts/foundation/foundation.section.js')
+		script(src='javascripts/foundation/foundation.tooltips.js')
+		script(src='javascripts/foundation/foundation.topbar.js')
+		script(src='_my-js/twentytwenty/jquery.event.move.js')
+		script(src='_my-js/twentytwenty/jquery.twentytwenty.js')
+	
+		script
+			$(document).foundation();
+		<script>
+		//- TWENTYTWENTY
+		$(window).load(function(){
+		$(".twentytwenty-container").twentytwenty({default_offset_pct: 0.7});  
+		});
+		</script>
+		
+		<script>
+		//- Joyride
+		$('#start-jr').on('click', function() {
+		$(document).foundation('joyride','start');
+		});
+		</script>

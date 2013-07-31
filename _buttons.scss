@@ -1,0 +1,91 @@
+@mixin button-effect($bg:$primary-color){
+background-color: $bg;
+$dark-bg: darken($bg, 5%);
+$darker-bg: darken($bg, 10%);
+border-color:$dark-bg;
+
+&:hover,
+&:focus,
+&:active{
+background-color: darken($bg, 10%);
+border-color:$dark-bg;
+}
+}
+
+
+a,
+button,
+.button,
+input[type="submit"]{
+&.primary-flat-dark {
+@include button-effect($belize-hole);
+}
+
+&.secondary-flat {
+@include button-effect($clouds);
+}
+
+&.secondary-flat-dark {
+@include button-effect($silver);
+}
+
+&.secondary-flat-darker {
+@include button-effect($concrete);
+}
+
+&.secondary-flat-darkest {
+@include button-effect($asbestos);
+}
+
+&.success-flat{
+@include button-effect($emerland);
+}
+&.success-flat-dark{
+@include button-effect($turquoise);
+}
+&.success-flat-darker{
+@include button-effect($nephritis);
+}
+&.success-flat-darkest{
+@include button-effect($green-sea);
+}
+
+&.alert-flat{
+@include button-effect($alizarin);
+}
+&.alert-flat-dark{
+@include button-effect($pomegranate);
+}
+
+&.info-flat{
+@include button-effect($sun-flower);
+}
+&.info-flat-dark{
+@include button-effect($orange);
+}
+
+&.warning-flat{
+@include button-effect($carrot);
+}
+&.warning-flat-dark{
+@include button-effect($pumpkin);
+}
+
+&.highlight-flat{
+@include button-effect($amethyst);
+}
+&.highlight-flat-dark{
+@include button-effect($wisteria);
+}
+
+&.inverse-flat{
+@include button-effect($wet-asphalt);
+}
+&.inverse-flat-dark{
+@include button-effect($midnight-blue);
+}
+&.inverse-flat-darker{
+@include button-effect($black-top);
+}
+}
+
