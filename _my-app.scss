@@ -2,47 +2,50 @@
 @import "fonts";
 @import "buttons";
 @import "twentytwenty";
+@import "typography";
 
 /*
-// Hyphenations
-* {
--webkit-hyphens: auto;
--moz-hyphens: auto;
-hyphens: auto;
--ms-word-break: break-all;
-word-break: break-all;
+============================================================================================================================================
 
-// Non standard for webkit
-word-break: break-word;
+QUICK REFERENCE
 
--webkit-hyphens: auto;
--moz-hyphens: auto;
-hyphens: auto;
+Colors:
+// Shades of Green
+$emerland: 			#2ECC71;
+$nephritis: 		#27AE60;
+$turquoise: 		#1ABC9C;
+$green-sea: 		#16A085;
 
--webkit-hyphenate-before: 2;
--webkit-hyphenate-after: 3;
-hyphenate-lines: 3;
+// Shades of Blue
+$peter-river: 		#3498DB;
+$belize-hole: 		#2980B9;
+
+// Shades of Purple
+$amethyst: 			#9859b6;
+$wisteria: 			#8E44AD;
+
+// Shades of Gray
+$clouds: 			#ECF0F1;
+$dark-clouds:		darken($clouds, 3%);
+$silver:			#BDC3C7;
+$concrete:			#95A5A6;
+$asbestos:			#7F8C8D;
+$wet-asphalt: 		#34495E;
+$midnight-blue: 	#2C3E50;
+$black-top: 		darken($midnight-blue, 12%);
+
+// Shades of Yellow/Orange
+$sun-flower:		#F1C40F;
+$orange:			#F39C12;
+$carrot:			#E67E22;
+$pumpkin:			#D35400;
+
+// Shades of Red
+$alizarin:			#E74C3C;
+$pomegranate: 		#C0392B;
+
+============================================================================================================================================
+ADD YOUR STYLES BELOW THIS LINE
+============================================================================================================================================
 */
 
-
-// Ligatures
-/*
--moz-font-feature-settings: "liga=1, dlig=1";
--ms-font-feature-settings: "liga", "dlig";
--webkit-font-feature-settings: "liga", "dlig";
--o-font-feature-settings: "liga", "dlig";
-font-feature-settings: "liga", "dlig";
-*/
-
-// Font size adjust 
-// In situations where font fallback occurs, 
-// fallback fonts may not share the same aspect ratio 
-// as the desired font family and will thus appear less readable.
-// The font-size-adjust property is a way to preserve the readability 
-// of text when font fallback occurs. It does this by adjusting the 
-// font-size so that the x-height is the same regardless of the font used.
-/*
-{
-font-size-adjust: auto;
-}
-*/
